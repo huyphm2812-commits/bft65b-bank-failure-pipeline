@@ -1,0 +1,17 @@
+model,false_positive_cost_rate,false_positive_cost,threshold,development_expected_loss,cost_unit
+prior_baseline,0.05,7500.0,0.1,52500.0,bank
+prior_baseline,0.1,15000.0,0.1,105000.0,bank
+prior_baseline,0.25,37500.0,1.0,150000.0,bank
+prior_baseline,0.5,75000.0,1.0,150000.0,bank
+always_negative_baseline,0.05,7500.0,0.0,52500.0,bank
+always_negative_baseline,0.1,15000.0,0.0,105000.0,bank
+always_negative_baseline,0.25,37500.0,1.0,150000.0,bank
+always_negative_baseline,0.5,75000.0,1.0,150000.0,bank
+logistic_regression,0.05,7500.0,0.9924680330125129,0.0,bank
+logistic_regression,0.1,15000.0,0.9924680330125129,0.0,bank
+logistic_regression,0.25,37500.0,0.9924680330125129,0.0,bank
+logistic_regression,0.5,75000.0,0.9924680330125129,0.0,bank
+random_forest,0.05,7500.0,0.7986780182483099,0.0,bank
+random_forest,0.1,15000.0,0.7986780182483099,0.0,bank
+random_forest,0.25,37500.0,0.7986780182483099,0.0,bank
+random_forest,0.5,75000.0,0.7986780182483099,0.0,bank

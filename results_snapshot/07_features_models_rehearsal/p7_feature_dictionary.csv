@@ -1,0 +1,17 @@
+feature,formula_or_source,handling_note
+capital_ratio,EQ / ASSET,Capital proxy; verify EQ and ASSET units in risview_properties.yaml.
+loan_to_asset,LNLSNET / ASSET,Net-loan concentration proxy; denominator-zero returns missing.
+noncurrent_loan_to_asset,NCLNLS / ASSET,Asset-quality proxy; confirm NCLNLS definition and sign.
+ore_to_asset,ORE / ASSET,Other-real-estate concentration proxy.
+cash_to_asset,CHBAL / ASSET,Liquidity proxy.
+securities_to_asset,SC / ASSET,Securities concentration proxy.
+net_income_to_asset,NETINC / ASSET,Audit-only provisional feature; excluded from the model until NETINC YTD/quarterly meaning is confirmed.
+roa_level,ROA,Reported profitability ratio; preserve source scale.
+roe_level,ROE,Reported return-on-equity ratio; preserve source scale.
+nimy_level,NIMY,Reported net-interest-margin proxy; verify field definition.
+rbc1a_level,RBC1AAJ,Capital adequacy proxy; verify units and denominator.
+rbcrwa_level,RBCRWAJ,Risk-weighted capital proxy; verify units and denominator.
+asset_growth_qoq,ASSET(t)/ASSET(t-1)-1,Past-quarter momentum; only exact adjacent quarter is used.
+asset_growth_yoy,ASSET(t)/ASSET(t-4)-1,Past-year momentum; only exact four-quarter lag is used.
+roa_rolling_4q_mean,"mean(ROA(t), ROA(t-1..t-3))",Trailing mean; missing if any of the four exact quarters is missing.
+netinc_change_qoq,NETINC(t)-NETINC(t-1),Audit-only provisional feature; excluded until NETINC YTD/quarterly meaning is confirmed.

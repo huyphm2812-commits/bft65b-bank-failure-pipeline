@@ -1,0 +1,13 @@
+model,selection,rule,development_f1,development_recall,threshold,max_fpr,development_tpr,development_expected_loss,false_positive_cost,false_negative_cost_source,cost_unit,development_fpr
+prior_baseline,max_f1,max_f1_on_development,0.125,1.0,0.0,,,,,,,
+prior_baseline,max_recall_at_fpr_limit,max_recall_at_development_fpr_limit,,,1.0,0.1,0.0,,,,,
+prior_baseline,development_cost,minimum_development_expected_loss,,,0.1,,,105000.0,15000.0,one development COST per failed CERT; missing values imputed to development median,bank,
+always_negative_baseline,max_f1,max_f1_on_development,0.125,1.0,0.0,,,,,,,
+always_negative_baseline,max_recall_at_fpr_limit,max_recall_at_development_fpr_limit,,,1.0,0.1,0.0,,,,,
+always_negative_baseline,development_cost,minimum_development_expected_loss,,,0.0,,,105000.0,15000.0,one development COST per failed CERT; missing values imputed to development median,bank,
+logistic_regression,max_f1,max_f1_on_development,1.0,1.0,0.9916875543007532,,,,,,,
+logistic_regression,max_recall_at_fpr_limit,max_recall_at_development_fpr_limit,,,0.9916875543007532,0.1,1.0,,,,,0.0
+logistic_regression,development_cost,minimum_development_expected_loss,,,0.9924680330125129,,,0.0,15000.0,one development COST per failed CERT; missing values imputed to development median,bank,
+random_forest,max_f1,max_f1_on_development,1.0,1.0,0.7986780182483099,,,,,,,
+random_forest,max_recall_at_fpr_limit,max_recall_at_development_fpr_limit,,,0.7986780182483099,0.1,1.0,,,,,0.0
+random_forest,development_cost,minimum_development_expected_loss,,,0.7986780182483099,,,0.0,15000.0,one development COST per failed CERT; missing values imputed to development median,bank,

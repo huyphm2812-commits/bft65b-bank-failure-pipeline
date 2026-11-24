@@ -1,0 +1,32 @@
+api_base: https://api.fdic.gov/banks
+start_date: "1984-03-31"
+end_date: "2026-06-30"
+train_end: "1992-12-31"
+dev_start: "1993-03-31"
+dev_end: "2005-12-31"
+test_start: "2008-01-01"
+test_end: "2014-12-31"
+label_cutoff: "2025-06-30"
+min_dev_failures: 20
+min_test_failures: 50
+page_size: 10000
+timeout_seconds: 180
+max_retries: 6
+backoff_seconds: 1.0
+compression: snappy
+random_seed: 42
+paths:
+  raw: ../02_local_workspace/data/raw
+  processed: ../02_local_workspace/data/processed
+  manifests: ../02_local_workspace/manifests
+  logs: ../02_local_workspace/logs
+  tmp: ../02_local_workspace/tmp
+  outputs: ../02_local_workspace/outputs
+  out_acquisition: ../02_local_workspace/outputs/01_acquisition
+  out_quality: ../02_local_workspace/outputs/02_quality
+  out_panel: ../02_local_workspace/outputs/03_panel
+  out_benchmark: ../02_local_workspace/outputs/04_storage_benchmark
+  out_engines: ../02_local_workspace/outputs/05_engines
+  out_spark: ../02_local_workspace/outputs/06_spark
+  out_models: ../02_local_workspace/outputs/07_features_models
+  out_repro: ../02_local_workspace/outputs/08_reproducibility

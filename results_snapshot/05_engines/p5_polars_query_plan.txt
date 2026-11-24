@@ -1,0 +1,33 @@
+LEFT JOIN:
+LEFT PLAN ON: [col("CERT"), col("REPDTE")]
+  simple π 38/40 ["ASSET", "BRO", "CERT", ... 35 other columns]
+     WITH_COLUMNS:
+     [when([(col("ASSET_lag1").is_not_null()) & ([(col("ASSET_lag1")) != (0.0)])]).then([([(col("ASSET")) / (col("ASSET_lag1"))]) - (1.0)]).otherwise(null.strict_cast(Float64)).alias("asset_growth_qoq")] 
+       WITH_COLUMNS:
+       [when([([(col("quarter_index")) - (col("quarter_index_previous"))]) == (1)]).then(col("ASSET_lag_candidate")).otherwise(null.strict_cast(Float64)).alias("ASSET_lag1")] 
+         WITH_COLUMNS:
+         [col("ASSET").shift([dyn int: 1]).over([col("CERT")]).alias("ASSET_lag_candidate"), col("quarter_index").shift([dyn int: 1]).over([col("CERT")]).alias("quarter_index_previous")] 
+          SORT BY [col("CERT"), col("REPDTE")]
+            simple π 36/37 ["ASSET", "BRO", "CERT", ... 33 other columns]
+               WITH_COLUMNS:
+               [when([(col("DEP").is_not_null()) & ([(col("DEP")) != (0.0)])]).then([(col("ASSET")) / (col("DEP"))]).otherwise(null.strict_cast(Float64)).alias("asset_to_deposit"), col("__POLARS_CSER_0x884a63d1e7d88a24").alias("reporting_year"), [([(col("__POLARS_CSER_0x884a63d1e7d88a24")) * (4)]) + (col("REPDTE").dt.quarter().cast(Int32))].alias("quarter_index")] 
+                 WITH_COLUMNS:
+                 [col("REPDTE").dt.year().alias("__POLARS_CSER_0x884a63d1e7d88a24")] 
+                  FILTER [(col("CERT").is_not_null()) & (col("REPDTE").is_not_null())] FROM
+                    simple π 33/34 ["ASSET", "BRO", "CERT", ... 30 other columns]
+                       WITH_COLUMNS:
+                       [col("CERT").cast(Int64), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]).coalesce([col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)])]).alias("REPDTE"), col("ASSET").cast(Float64), col("DEP").cast(Float64), col("EQ").cast(Float64), col("ROA").cast(Float64), col("ROE").cast(Float64), col("NETINC").cast(Float64), col("RBC1AAJ").cast(Float64), col("RBCRWAJ").cast(Float64)] 
+                         WITH_COLUMNS:
+                         [col("REPDTE").strict_cast(String).alias("__POLARS_CSER_0x37c12a20ba687658")] 
+                          Parquet SCAN [C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\financials\year=1984\part-REPDTE_19840331-000000.parquet, ... 237 other sources]
+                          PROJECT 33/33 COLUMNS
+RIGHT PLAN ON: [col("CERT"), col("REPDTE")]
+  UNIQUE[maintain_order: false, keep_strategy: First] BY Some(["CERT", "REPDTE"])
+    simple π 4/5 ["CERT", "REPDTE", "label", ... 1 other column]
+       WITH_COLUMNS:
+       [col("CERT").cast(Int64), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]).coalesce([col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)]), col("__POLARS_CSER_0x37c12a20ba687658").str.strip_chars([null]).str.strptime([String(raise)])]).alias("REPDTE")] 
+         WITH_COLUMNS:
+         [col("REPDTE").strict_cast(String).alias("__POLARS_CSER_0x37c12a20ba687658")] 
+          Parquet SCAN [C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\outputs\03_panel\modeling_panel.parquet]
+          PROJECT 4/61 COLUMNS
+END LEFT JOIN

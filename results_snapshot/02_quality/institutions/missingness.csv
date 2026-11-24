@@ -1,0 +1,10 @@
+dataset,field,rows,missing_count,missing_pct
+institutions,ACTIVE,27835,0,0.0
+institutions,BKCLASS,27835,0,0.0
+institutions,CERT,27835,0,0.0
+institutions,CHANGEC1,27835,3478,12.49506
+institutions,ENDEFYMD,27835,4230,15.196695
+institutions,ESTYMD,27835,0,0.0
+institutions,INSDATE,27835,161,0.578408
+institutions,NAME,27835,0,0.0
+institutions,STNAME,27835,0,0.0

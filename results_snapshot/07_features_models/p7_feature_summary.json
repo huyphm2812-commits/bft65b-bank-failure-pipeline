@@ -1,0 +1,68 @@
+{
+  "all_rows": 1682738,
+  "eligible_rows": 1597372,
+  "feature_columns": [
+    "capital_ratio",
+    "loan_to_asset",
+    "noncurrent_loan_to_asset",
+    "ore_to_asset",
+    "cash_to_asset",
+    "securities_to_asset",
+    "roa_level",
+    "roe_level",
+    "nimy_level",
+    "rbc1a_level",
+    "rbcrwa_level",
+    "asset_growth_qoq",
+    "asset_growth_yoy",
+    "roa_rolling_4q_mean"
+  ],
+  "provisional_features_excluded": [
+    "net_income_to_asset",
+    "netinc_change_qoq"
+  ],
+  "leakage_columns_excluded": [
+    "ACTIVE",
+    "CHANGEC1",
+    "eligible_for_model",
+    "exit_classification",
+    "failure_cost_numeric",
+    "failure_date",
+    "institution_end_date",
+    "label",
+    "label_status"
+  ],
+  "point_in_time_rule": "Feature at q uses only Financials at q and exact prior quarters; no missing quarter is bridged.",
+  "reporting_lag_rule": "Features are indexed by REPDTE and are assumed available at financial_available_date = REPDTE + configured reporting lag.",
+  "feature_selection_scope": "Pre-specified economic features; no outcome-driven feature selection is performed.",
+  "future_perturbation_check": {
+    "passed": true,
+    "perturbed_columns": [
+      "ACTIVE",
+      "CHANGEC1",
+      "eligible_for_model",
+      "exit_classification",
+      "failure_cost_numeric",
+      "failure_date",
+      "institution_end_date",
+      "label",
+      "label_status"
+    ],
+    "feature_columns_checked": [
+      "capital_ratio",
+      "loan_to_asset",
+      "noncurrent_loan_to_asset",
+      "ore_to_asset",
+      "cash_to_asset",
+      "securities_to_asset",
+      "roa_level",
+      "roe_level",
+      "nimy_level",
+      "rbc1a_level",
+      "rbcrwa_level",
+      "asset_growth_qoq",
+      "asset_growth_yoy",
+      "roa_rolling_4q_mean"
+    ]
+  }
+}

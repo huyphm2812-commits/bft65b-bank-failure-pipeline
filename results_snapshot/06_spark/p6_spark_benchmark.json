@@ -1,0 +1,46 @@
+{
+  "processing_version": "part6-v1",
+  "source_files": 238,
+  "panel_joined": true,
+  "panel_path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\03_panel\\modeling_panel.parquet",
+  "spark_master": "local[2]",
+  "spark_version": "3.5.5",
+  "source_rows_after_cleaning": 1682738,
+  "quarter_summary_rows": 170,
+  "repetitions": 2,
+  "row_equivalence_mode": "deterministic_sample",
+  "row_equivalence_sample_size": 10000,
+  "output_equivalence": {
+    "equivalent": true,
+    "checks": {
+      "rows": {
+        "equivalent": true,
+        "pandas_rows": 10000,
+        "polars_rows": 10000,
+        "detail": "equal"
+      },
+      "quarter_summary": {
+        "equivalent": true,
+        "pandas_rows": 170,
+        "polars_rows": 170,
+        "detail": "equal"
+      }
+    }
+  },
+  "operations": [
+    {
+      "engine": "spark",
+      "median_seconds": 38.535523849997844,
+      "std_seconds": 2.093428728697571,
+      "median_result_rows": 1682738.0,
+      "median_summary_rows": 170.0
+    }
+  ],
+  "extended_plan_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\06_spark\\p6_spark_explain_extended.txt",
+  "physical_plan_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\06_spark\\p6_spark_physical_plan.txt",
+  "limitations": [
+    "This is a local Spark run, not a distributed cluster.",
+    "For datasets above 250,000 rows, Spark-to-Pandas row equivalence falls back to a deterministic key-ordered sample; smaller runs compare all rows.",
+    "Runtime results are warm-only and machine-specific."
+  ]
+}

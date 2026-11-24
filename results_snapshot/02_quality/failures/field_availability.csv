@@ -1,0 +1,10 @@
+dataset,file,period,field,present_in_file,rows,non_null,non_null_pct,dtype
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,CERT,True,4117,3629,88.146709,Int64
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,CITYST,True,4117,4117,100.0,string
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,COST,True,4117,3480,84.527569,float64
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,FAILDATE,True,4117,4117,100.0,datetime64[ms]
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,FAILYR,True,4117,4117,100.0,Int64
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,NAME,True,4117,4117,100.0,string
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,QBFASSET,True,4117,3963,96.259412,float64
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,QBFDEP,True,4117,4115,99.951421,float64
+failures,C:\Users\QUANGHUY\Downloads\bigdata\BFT65B_FINAL\02_local_workspace\data\processed\failures\part-all-000000.parquet,all,RESTYPE,True,4117,4117,100.0,string

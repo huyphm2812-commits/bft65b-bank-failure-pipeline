@@ -1,0 +1,211 @@
+{
+  "artifacts": [
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\failures\\distribution_summary.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\failures\\duplicates.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\failures\\field_availability.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\failures\\invalid_values.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\failures\\missingness.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\failures\\reporting_gaps.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\financials\\distribution_summary.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\financials\\duplicates.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\financials\\field_availability.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\financials\\invalid_values.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\financials\\missingness.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\financials\\reporting_gaps.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\identifier_consistency.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\institutions\\distribution_summary.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\institutions\\duplicates.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\institutions\\field_availability.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\institutions\\invalid_values.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\institutions\\missingness.csv",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\institutions\\reporting_gaps.csv"
+  ],
+  "audit_version": "part2-v1",
+  "datasets": [
+    {
+      "columns": [
+        "ASSET",
+        "BRO",
+        "CERT",
+        "CHBAL",
+        "DEP",
+        "DEPDOM",
+        "EINTEXP",
+        "ELNATR",
+        "EQ",
+        "INTINC",
+        "LNATRES",
+        "LNCI",
+        "LNCON",
+        "LNLSGR",
+        "LNLSNET",
+        "LNRE",
+        "NAASSET",
+        "NCLNLS",
+        "NETINC",
+        "NIMY",
+        "NONII",
+        "NONIX",
+        "NTLNLS",
+        "ORE",
+        "P3ASSET",
+        "P9ASSET",
+        "RBC1AAJ",
+        "RBCRWAJ",
+        "REPDTE",
+        "ROA",
+        "ROE",
+        "SC",
+        "STNAME"
+      ],
+      "dataset": "financials",
+      "duplicate_key_groups": 0,
+      "duplicate_nonnull_key_groups": 0,
+      "duplicate_nonnull_rows": 0,
+      "duplicate_rows": 0,
+      "files": 238,
+      "invalid_rule_counts": {
+        "negative:CHBAL": 2,
+        "negative:LNATRES": 9,
+        "negative:LNCI": 2,
+        "negative:LNLSGR": 33,
+        "negative:LNLSNET": 51,
+        "negative:LNRE": 6,
+        "negative:NAASSET": 2,
+        "negative:NCLNLS": 3,
+        "negative:ORE": 645,
+        "negative:SC": 96,
+        "observed_negative:NTLNLS": 299759,
+        "outside_plausible_range:NIMY": 131,
+        "outside_plausible_range:RBC1AAJ": 274,
+        "outside_plausible_range:RBCRWAJ": 808,
+        "outside_plausible_range:ROA": 244,
+        "outside_plausible_range:ROE": 697
+      },
+      "max_reporting_date": "2026-06-30",
+      "min_reporting_date": "1984-03-31",
+      "missing_key_rows": 0,
+      "missingness_fields": 33,
+      "reporting_gap_banks": 32,
+      "rows": 1682738,
+      "status": "ok",
+      "unique_cert": 24064,
+      "unique_reporting_dates": 170
+    },
+    {
+      "columns": [
+        "CERT",
+        "CITYST",
+        "COST",
+        "FAILDATE",
+        "FAILYR",
+        "NAME",
+        "QBFASSET",
+        "QBFDEP",
+        "RESTYPE"
+      ],
+      "dataset": "failures",
+      "duplicate_key_groups": 44,
+      "duplicate_nonnull_key_groups": 44,
+      "duplicate_nonnull_rows": 44,
+      "duplicate_rows": 44,
+      "files": 1,
+      "invalid_rule_counts": {
+        "missing_required:CERT": 488
+      },
+      "max_reporting_date": null,
+      "min_reporting_date": null,
+      "missing_key_rows": 488,
+      "missingness_fields": 9,
+      "reporting_gap_banks": 0,
+      "rows": 4117,
+      "status": "ok",
+      "unique_cert": 3585,
+      "unique_reporting_dates": 0
+    },
+    {
+      "columns": [
+        "ACTIVE",
+        "BKCLASS",
+        "CERT",
+        "CHANGEC1",
+        "ENDEFYMD",
+        "ESTYMD",
+        "INSDATE",
+        "NAME",
+        "STNAME"
+      ],
+      "dataset": "institutions",
+      "duplicate_key_groups": 0,
+      "duplicate_nonnull_key_groups": 0,
+      "duplicate_nonnull_rows": 0,
+      "duplicate_rows": 0,
+      "files": 3,
+      "invalid_rule_counts": {},
+      "max_reporting_date": null,
+      "min_reporting_date": null,
+      "missing_key_rows": 0,
+      "missingness_fields": 9,
+      "reporting_gap_banks": 0,
+      "rows": 27835,
+      "status": "ok",
+      "unique_cert": 27835,
+      "unique_reporting_dates": 0
+    }
+  ],
+  "failure_event_evidence": {
+    "assistance_bank_review_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\assistance_bank_review.csv",
+    "assistance_banks_with_later_reports": 203,
+    "failure_anomalies_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\failure_anomalies.csv",
+    "post_failure_report_banks": 270,
+    "post_failure_report_rows": 1211,
+    "post_failure_reports_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\post_failure_reports.csv"
+  },
+  "figures": [
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\figures\\missingness_top20.png",
+    "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\figures\\financial_field_availability.png"
+  ],
+  "identifier_consistency": [
+    {
+      "left_dataset": "financials",
+      "left_unique_cert": 24064,
+      "right_dataset": "institutions",
+      "right_unique_cert": 27835,
+      "unmatched_count": 235,
+      "unmatched_sample": "3054,5056,16055,16105,16841,18342,18981,19571,20225,20422,25147,25175,25824,25919,25927,26019,26162,26378,26474,26596,26622,26732,26801,26841,26927,27102,27112,27120,27155,27177,27189,27229,27262,27279,27291,27359,27469,27479,27545,27591,27827,28384,28807,30161,30209,30377,31257,32772,32816,32911,32957,32961,32962,33001,33008,33132,33133,33148,33196,33239,33377,33381,33453,33573,33575,33597,33599,33617,33626,33706,33754,33804,33874,33879,33884,33906,33908,33909,33915,33929,33932,33962,33968,33969,34006,34007,34009,34045,34056,34057,34065,34094,34096,34115,34128,34141,34142,34169,34212,34213"
+    },
+    {
+      "left_dataset": "failures",
+      "left_unique_cert": 3585,
+      "right_dataset": "institutions",
+      "right_unique_cert": 27835,
+      "unmatched_count": 0,
+      "unmatched_sample": ""
+    },
+    {
+      "left_dataset": "institutions",
+      "left_unique_cert": 27835,
+      "right_dataset": "financials",
+      "right_unique_cert": 24064,
+      "unmatched_count": 4006,
+      "unmatched_sample": "4,6,10,15,30,40,42,48,61,65,98,125,126,128,129,135,140,141,167,203,208,270,276,277,311,319,322,323,326,333,368,371,372,374,380,392,394,396,397,415,431,443,450,473,480,499,500,509,514,536,540,542,544,545,570,576,579,580,583,594,610,613,615,638,642,645,648,649,652,657,669,672,674,676,684,685,699,714,736,752,760,762,765,766,767,772,773,774,781,787,790,814,815,820,834,843,853,856,891,897"
+    }
+  ],
+  "manifest": {
+    "chunks": 242,
+    "complete_chunks": 242,
+    "incomplete_chunks": 0
+  },
+  "non_destructive": true,
+  "outlier_iqr_audit": {
+    "outlier_iqr_by_quarter_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\outlier_iqr_by_quarter.csv",
+    "outlier_iqr_summary_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\02_quality\\outlier_iqr_summary.csv",
+    "total_evaluations": 5032,
+    "total_outliers_flagged": 5706905,
+    "zero_variance_instances": 24
+  },
+  "quality_gate": {
+    "rule": "Financials CERT/REPDTE must be unique; source anomalies are retained and handled explicitly rather than silently dropped.",
+    "status": "pass"
+  }
+}

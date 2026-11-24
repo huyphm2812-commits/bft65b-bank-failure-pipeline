@@ -1,0 +1,10 @@
+{
+  "panel_path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\03_panel\\modeling_panel.parquet",
+  "panel_rows": 1597372,
+  "panel_in_memory_mb": 2146.57,
+  "system_total_ram_mb": 16088.49,
+  "system_available_ram_mb": 7079.12,
+  "panel_to_available_ram_pct": 30.3225,
+  "single_node_sufficient": true,
+  "methodology": "pandas memory_usage(deep=True) vs psutil.virtual_memory()"
+}

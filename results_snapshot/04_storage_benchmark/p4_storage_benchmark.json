@@ -1,0 +1,250 @@
+{
+  "benchmark_version": "part4-v1",
+  "rows": 1682738,
+  "source_rows": 1682738,
+  "sample": {
+    "strategy": "full_dataset",
+    "requested_rows": null,
+    "seed": 42,
+    "rows": 1682738
+  },
+  "repetitions": 3,
+  "cache_mode": "warm_only",
+  "cold_cache_requested": false,
+  "cold_cache_note": "Cold-cache runs were not requested; results are warm-only.",
+  "rss_sampling_note": "RSS is the larger before/after endpoint measurement per operation; Python allocation peak is measured exactly with tracemalloc. A background RSS sampler is avoided because concurrent native PyArrow reads caused Windows access violations.",
+  "formats": [
+    {
+      "format": "csv",
+      "bytes": 448089884,
+      "path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\04_storage_benchmark\\artifacts\\financials.csv"
+    },
+    {
+      "format": "gzip_csv",
+      "bytes": 175135035,
+      "path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\04_storage_benchmark\\artifacts\\financials.csv.gz"
+    },
+    {
+      "format": "single_snappy",
+      "bytes": 180809602,
+      "path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\04_storage_benchmark\\artifacts\\financials_single_snappy.parquet"
+    },
+    {
+      "format": "single_zstd",
+      "bytes": 150918711,
+      "path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\04_storage_benchmark\\artifacts\\financials_single_zstd.parquet"
+    },
+    {
+      "format": "year_partitioned_snappy",
+      "bytes": 226589220,
+      "path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\04_storage_benchmark\\artifacts\\financials_year_snappy"
+    },
+    {
+      "format": "year_partitioned_zstd",
+      "bytes": 188412595,
+      "path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\04_storage_benchmark\\artifacts\\financials_year_zstd"
+    }
+  ],
+  "operations": [
+    {
+      "operation": "read_csv_date_filter",
+      "median_seconds": 4.901374900000519,
+      "std_seconds": 0.2789941917934095,
+      "min_seconds": 4.612683500003186,
+      "max_seconds": 5.170558199999505,
+      "median_peak_rss_mb": 1432.4765625,
+      "median_peak_python_mb": 847.7007684707642
+    },
+    {
+      "operation": "read_csv_full",
+      "median_seconds": 4.571123899993836,
+      "std_seconds": 0.13309439765160727,
+      "min_seconds": 4.359034599998267,
+      "max_seconds": 4.6043845000021975,
+      "median_peak_rss_mb": 1272.40625,
+      "median_peak_python_mb": 847.715166091919
+    },
+    {
+      "operation": "read_csv_selected_columns",
+      "median_seconds": 2.465818600001512,
+      "std_seconds": 0.3097802219839665,
+      "min_seconds": 2.4226083000030485,
+      "max_seconds": 2.979462000002968,
+      "median_peak_rss_mb": 1327.8046875,
+      "median_peak_python_mb": 131.65863800048828
+    },
+    {
+      "operation": "read_gzip_csv_full",
+      "median_seconds": 7.531142699997872,
+      "std_seconds": 0.08164388730246358,
+      "min_seconds": 7.446198899997398,
+      "max_seconds": 7.609441599997808,
+      "median_peak_rss_mb": 1274.40625,
+      "median_peak_python_mb": 847.7305488586426
+    },
+    {
+      "operation": "read_single_parquet_date_filter",
+      "median_seconds": 0.23572250000142958,
+      "std_seconds": 0.04631910012768702,
+      "min_seconds": 0.21057559999462683,
+      "max_seconds": 0.30036370000016177,
+      "median_peak_rss_mb": 1265.76171875,
+      "median_peak_python_mb": 71.44593334197998
+    },
+    {
+      "operation": "read_single_parquet_selected_columns",
+      "median_seconds": 0.05717870000080438,
+      "std_seconds": 0.011674298911769044,
+      "min_seconds": 0.05062069999985397,
+      "max_seconds": 0.0733061999999336,
+      "median_peak_rss_mb": 1202.59375,
+      "median_peak_python_mb": 24.513937950134277
+    },
+    {
+      "operation": "read_single_parquet_snappy_full",
+      "median_seconds": 2.206515000005311,
+      "std_seconds": 0.16719735027614552,
+      "min_seconds": 1.9284854000070482,
+      "max_seconds": 2.228402399996412,
+      "median_peak_rss_mb": 2133.0234375,
+      "median_peak_python_mb": 172.43401527404785
+    },
+    {
+      "operation": "read_single_parquet_zstd_full",
+      "median_seconds": 1.8360925000015413,
+      "std_seconds": 0.07042689976525518,
+      "min_seconds": 1.8220679000005475,
+      "max_seconds": 1.9504569999990053,
+      "median_peak_rss_mb": 2241.3359375,
+      "median_peak_python_mb": 143.92729663848877
+    },
+    {
+      "operation": "read_year_partitioned_date_filter",
+      "median_seconds": 0.18247120000160066,
+      "std_seconds": 0.008272927253703629,
+      "min_seconds": 0.18033629999990808,
+      "max_seconds": 0.19561310000426602,
+      "median_peak_rss_mb": 1315.51953125,
+      "median_peak_python_mb": 9.677757263183594
+    },
+    {
+      "operation": "read_year_partitioned_selected_columns",
+      "median_seconds": 0.0789703999980702,
+      "std_seconds": 0.006012476531344907,
+      "min_seconds": 0.07595020000007935,
+      "max_seconds": 0.0875404000034905,
+      "median_peak_rss_mb": 1232.46484375,
+      "median_peak_python_mb": 16.062583923339844
+    },
+    {
+      "operation": "read_year_partitioned_snappy_full",
+      "median_seconds": 1.9803062999999383,
+      "std_seconds": 0.10263848409311759,
+      "min_seconds": 1.908147399997688,
+      "max_seconds": 2.1106564000001526,
+      "median_peak_rss_mb": 2502.7734375,
+      "median_peak_python_mb": 131.63183307647705
+    },
+    {
+      "operation": "read_year_partitioned_zstd_full",
+      "median_seconds": 2.0482667999967816,
+      "std_seconds": 0.31307247012750894,
+      "min_seconds": 1.9628035999994609,
+      "max_seconds": 2.542717799995444,
+      "median_peak_rss_mb": 2621.81640625,
+      "median_peak_python_mb": 131.63183307647705
+    },
+    {
+      "operation": "write_csv",
+      "median_seconds": 421.000512300001,
+      "std_seconds": 25.66761859146096,
+      "min_seconds": 388.56720640000276,
+      "max_seconds": 439.24456790000113,
+      "median_peak_rss_mb": 1600.5078125,
+      "median_peak_python_mb": 17.438661575317383
+    },
+    {
+      "operation": "write_gzip_csv",
+      "median_seconds": 532.9986333999987,
+      "std_seconds": 892.8543166859205,
+      "min_seconds": 529.3647925000041,
+      "max_seconds": 2077.6475512000034,
+      "median_peak_rss_mb": 1584.18359375,
+      "median_peak_python_mb": 17.623623847961426
+    },
+    {
+      "operation": "write_single_parquet_snappy",
+      "median_seconds": 1.8752641000028234,
+      "std_seconds": 0.02039167265280579,
+      "min_seconds": 1.8708671999993385,
+      "max_seconds": 1.9081791999997222,
+      "median_peak_rss_mb": 1659.265625,
+      "median_peak_python_mb": 14.481937408447266
+    },
+    {
+      "operation": "write_single_parquet_zstd",
+      "median_seconds": 2.122129800001858,
+      "std_seconds": 0.026331039374550173,
+      "min_seconds": 2.1044710999995004,
+      "max_seconds": 2.1562667000034708,
+      "median_peak_rss_mb": 1773.58203125,
+      "median_peak_python_mb": 14.474705696105957
+    },
+    {
+      "operation": "write_year_partitioned_snappy",
+      "median_seconds": 4.867183000002115,
+      "std_seconds": 0.2966713577932409,
+      "min_seconds": 4.573395700004767,
+      "max_seconds": 5.16672909999761,
+      "median_peak_rss_mb": 893.95703125,
+      "median_peak_python_mb": 952.8441410064697
+    },
+    {
+      "operation": "write_year_partitioned_zstd",
+      "median_seconds": 5.007978900001035,
+      "std_seconds": 0.0907608428029425,
+      "min_seconds": 4.968309699994279,
+      "max_seconds": 5.141546899998502,
+      "median_peak_rss_mb": 927.11328125,
+      "median_peak_python_mb": 952.8432483673096
+    }
+  ],
+  "date_filter": {
+    "column": "REPDTE",
+    "operator": ">=",
+    "value": "2020-01-01T00:00:00",
+    "parquet_filter_type": "pandas.Timestamp"
+  },
+  "output_equivalence": {
+    "reference": "csv",
+    "selected_columns": [
+      "CERT",
+      "REPDTE",
+      "ASSET",
+      "DEP",
+      "EQ"
+    ],
+    "checks": {
+      "gzip_csv": {
+        "equivalent": true,
+        "rows": 1682738
+      },
+      "single_snappy": {
+        "equivalent": true,
+        "rows": 1682738
+      },
+      "single_zstd": {
+        "equivalent": true,
+        "rows": 1682738
+      },
+      "year_partitioned_snappy": {
+        "equivalent": true,
+        "rows": 1682738
+      },
+      "year_partitioned_zstd": {
+        "equivalent": true,
+        "rows": 1682738
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# Local workspace & data directories (Never commit to Git)
+02_local_workspace/
+data/
+manifests/
+logs/
+outputs/
+tmp/
+.bft65b_spark_tmp/
+
+# Data and large binary artifacts
+*.parquet
+*.csv.gz
+*.ipc
+*.arrow
+*.joblib
+
+# Environment, secrets, and caches
+.venv/
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,12 @@
+{
+  "standard_policy": "censor",
+  "sensitivity_policy": "negative",
+  "standard_eligible_rows": 1597372,
+  "sensitivity_eligible_rows": 1662274,
+  "standard_positive_labels": 10823,
+  "sensitivity_positive_labels": 10823,
+  "standard_negative_labels": 1586549,
+  "sensitivity_negative_labels": 1651451,
+  "difference_in_eligible_rows": 64902,
+  "note": "Sensitivity only; the standard model uses merger/other censoring because the assignment defines mergers as not failures and their future exposure is not a comparable failure-negative outcome."
+}

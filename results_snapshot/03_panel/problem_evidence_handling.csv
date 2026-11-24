@@ -1,0 +1,9 @@
+problem,evidence_source,evidence_status,evidence_count,handling,rationale
+failures_missing_cert,failure_anomalies.csv,generated_file_present,488.0,Retain source rows; exclude from linked panel because CERT is required.,The audit reports the date range and whether any missing-CERT event is in the modelling era.
+repeated_failure_events,failure_anomalies.csv,generated_file_present,44.0,Use the earliest explicit RESTYPE=FAILURE; do not take min(all event dates).,Assistance and failure events can share a CERT.
+assistance_events,failure_anomalies.csv,generated_file_present,593.0,Treat RESTYPE=ASSISTANCE as non-failure evidence and keep it out of the positive label.,The source distinguishes assistance from failure and some assisted banks continue reporting.
+post_failure_report,post_failure_reports.csv,generated_file_present,1211.0,Censor reports after an explicit failure event and inspect the event source.,A post-failure report cannot be used as a pre-failure observation.
+negative_ntlnls_rule_rejected,data_quality_summary.csv and field audit,generated_file_present,299759.0,NTLNLS is not treated as universally non-negative; retain observed negatives and document the rejected rule.,"The smoke audit found frequent negative values, so flagging every negative as invalid would be a false-positive quality rule."
+duplicate_bank_quarter,data_quality_summary.csv,generated_file_present,0.0,Fail closed if a Financials CERT/REPDTE key is duplicated.,A bank-quarter panel key must be unique.
+reporting_gaps,financials/reporting_gaps.csv,generated_file_present,32.0,Do not fill gaps; censor a negative label when future exposure is incomplete.,Bridging a gap would create an unobserved outcome.
+post_cutoff_outcomes,assignment rule,assignment rule,,Set labels missing after 2025Q2.,The four-quarter outcome window is incomplete after the cutoff.

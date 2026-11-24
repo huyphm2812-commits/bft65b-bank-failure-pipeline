@@ -1,0 +1,2 @@
+# results_snapshot directory
+# Populated by scripts/export_results.py with lightweight tables (< 1MB), JSON, and figures.

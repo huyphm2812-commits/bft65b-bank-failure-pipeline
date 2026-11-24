@@ -1,0 +1,3 @@
+engine,operation,repeat,seconds,result_rows,summary_rows,cache_mode
+spark,read_transform_collect,1,40.01580149999063,1682738,170,warm_only
+spark,read_transform_collect,2,37.05524620000506,1682738,170,warm_only

@@ -1,0 +1,10 @@
+dataset,field,rows,missing_count,missing_pct
+failures,CERT,4117,488,11.853291
+failures,CITYST,4117,0,0.0
+failures,COST,4117,637,15.472431
+failures,FAILDATE,4117,0,0.0
+failures,FAILYR,4117,0,0.0
+failures,NAME,4117,0,0.0
+failures,QBFASSET,4117,154,3.740588
+failures,QBFDEP,4117,2,0.048579
+failures,RESTYPE,4117,0,0.0

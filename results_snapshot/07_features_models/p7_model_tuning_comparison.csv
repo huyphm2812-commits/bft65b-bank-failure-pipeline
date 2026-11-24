@@ -1,0 +1,11 @@
+model_family,scaler,imputer,select_k_best,C,max_depth,min_samples_leaf,sample_size,dev_pr_auc,dev_roc_auc,mean_cv_pr_auc,mean_cv_roc_auc,notes
+logistic_regression,StandardScaler,SimpleImputer(add_indicator=True),none,1.0,none,none,522402,0.1291,0.9052,,,Scaler comparison on development split; StandardScaler
+logistic_regression,RobustScaler,SimpleImputer(add_indicator=True),none,1.0,none,none,522402,0.125,0.9043,,,Scaler comparison on development split; RobustScaler
+logistic_regression,QuantileTransformer,SimpleImputer(add_indicator=True),none,1.0,none,none,522402,0.151,0.9149,,,Scaler comparison on development split; QuantileTransformer
+logistic_regression,QuantileTransformer,SimpleImputer(add_indicator=True),SelectKBest(k=10),1.0,none,none,522402,0.1828,0.9022,,,Optional feature selection with SelectKBest(f_classif)
+logistic_regression,QuantileTransformer,SimpleImputer(add_indicator=True),none,0.01,none,none,522402,0.152,0.9146,0.1851,0.8471,LR hyperparameter tuning C=0.01 scored via annual expanding window
+logistic_regression,QuantileTransformer,SimpleImputer(add_indicator=True),none,0.1,none,none,522402,0.1513,0.9149,0.1652,0.856,LR hyperparameter tuning C=0.1 scored via annual expanding window
+logistic_regression,QuantileTransformer,SimpleImputer(add_indicator=True),none,1.0,none,none,522402,0.151,0.9149,0.1638,0.8577,LR hyperparameter tuning C=1.0 scored via annual expanding window
+logistic_regression,QuantileTransformer,SimpleImputer(add_indicator=True),none,10.0,none,none,522402,0.1513,0.9148,0.1636,0.8575,LR hyperparameter tuning C=10.0 scored via annual expanding window
+random_forest,none,SimpleImputer(add_indicator=True),none,none,10,5,522402,0.2272,0.9419,0.2486,0.9403,"RF grid tuning max_depth=10, min_leaf=5"
+random_forest,none,SimpleImputer(add_indicator=True),none,none,15,20,522402,0.2263,0.9388,0.2453,0.9237,"RF grid tuning max_depth=15, min_leaf=20"

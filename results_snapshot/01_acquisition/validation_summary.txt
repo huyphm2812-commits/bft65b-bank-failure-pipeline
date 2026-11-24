@@ -1,0 +1,1290 @@
+FDIC acquisition validation summary
+
+{
+  "cross_table_certificates": {
+    "failures_not_in_institutions": [],
+    "financials_not_in_institutions": [
+      3054,
+      5056,
+      16055,
+      16105,
+      16841,
+      18342,
+      18981,
+      19571,
+      20225,
+      20422,
+      25147,
+      25175,
+      25824,
+      25919,
+      25927,
+      26019,
+      26162,
+      26378,
+      26474,
+      26596,
+      26622,
+      26732,
+      26801,
+      26841,
+      26927,
+      27102,
+      27112,
+      27120,
+      27155,
+      27177,
+      27189,
+      27229,
+      27262,
+      27279,
+      27291,
+      27359,
+      27469,
+      27479,
+      27545,
+      27591,
+      27827,
+      28384,
+      28807,
+      30161,
+      30209,
+      30377,
+      31257,
+      32772,
+      32816,
+      32911,
+      32957,
+      32961,
+      32962,
+      33001,
+      33008,
+      33132,
+      33133,
+      33148,
+      33196,
+      33239,
+      33377,
+      33381,
+      33453,
+      33573,
+      33575,
+      33597,
+      33599,
+      33617,
+      33626,
+      33706,
+      33754,
+      33804,
+      33874,
+      33879,
+      33884,
+      33906,
+      33908,
+      33909,
+      33915,
+      33929,
+      33932,
+      33962,
+      33968,
+      33969,
+      34006,
+      34007,
+      34009,
+      34045,
+      34056,
+      34057,
+      34065,
+      34094,
+      34096,
+      34115,
+      34128,
+      34141,
+      34142,
+      34169,
+      34212,
+      34213
+    ],
+    "institutions_not_in_financials": [
+      4,
+      6,
+      10,
+      15,
+      30,
+      40,
+      42,
+      48,
+      61,
+      65,
+      98,
+      125,
+      126,
+      128,
+      129,
+      135,
+      140,
+      141,
+      167,
+      203,
+      208,
+      270,
+      276,
+      277,
+      311,
+      319,
+      322,
+      323,
+      326,
+      333,
+      368,
+      371,
+      372,
+      374,
+      380,
+      392,
+      394,
+      396,
+      397,
+      415,
+      431,
+      443,
+      450,
+      473,
+      480,
+      499,
+      500,
+      509,
+      514,
+      536,
+      540,
+      542,
+      544,
+      545,
+      570,
+      576,
+      579,
+      580,
+      583,
+      594,
+      610,
+      613,
+      615,
+      638,
+      642,
+      645,
+      648,
+      649,
+      652,
+      657,
+      669,
+      672,
+      674,
+      676,
+      684,
+      685,
+      699,
+      714,
+      736,
+      752,
+      760,
+      762,
+      765,
+      766,
+      767,
+      772,
+      773,
+      774,
+      781,
+      787,
+      790,
+      814,
+      815,
+      820,
+      834,
+      843,
+      853,
+      856,
+      891,
+      897
+    ],
+    "truncated_to": 100
+  },
+  "datasets": {
+    "failures": {
+      "duplicate_cert_nonnull": 44,
+      "files": 1,
+      "missing_cert": 488,
+      "missing_faildate": 0,
+      "rows": 4117,
+      "status": "ok",
+      "unique_cert": 3585
+    },
+    "financials": {
+      "duplicate_cert_repdte": 0,
+      "files": 238,
+      "max_repdte": "2026-06-30",
+      "min_repdte": "1984-03-31",
+      "missing_cert": 0,
+      "missing_repdte": 0,
+      "rows": 1682738,
+      "status": "ok",
+      "unique_cert": 24064,
+      "unique_repdte": 170
+    },
+    "institutions": {
+      "duplicate_cert": 0,
+      "files": 3,
+      "missing_cert": 0,
+      "rows": 27835,
+      "status": "ok",
+      "unique_cert": 27835
+    }
+  },
+  "errors": [],
+  "manifest": {
+    "chunks": 242,
+    "expected_quarters": 170,
+    "observed_quarters": 170,
+    "quarter_totals": {
+      "1984-03-31": {
+        "api_total": 17930,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17930
+      },
+      "1984-06-30": {
+        "api_total": 17935,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17935
+      },
+      "1984-09-30": {
+        "api_total": 17946,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17946
+      },
+      "1984-12-31": {
+        "api_total": 17949,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17949
+      },
+      "1985-03-31": {
+        "api_total": 17968,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17968
+      },
+      "1985-06-30": {
+        "api_total": 17983,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17983
+      },
+      "1985-09-30": {
+        "api_total": 18058,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 18058
+      },
+      "1985-12-31": {
+        "api_total": 18082,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 18082
+      },
+      "1986-03-31": {
+        "api_total": 18133,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 18133
+      },
+      "1986-06-30": {
+        "api_total": 18068,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 18068
+      },
+      "1986-09-30": {
+        "api_total": 18051,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 18051
+      },
+      "1986-12-31": {
+        "api_total": 17930,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17930
+      },
+      "1987-03-31": {
+        "api_total": 17795,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17795
+      },
+      "1987-06-30": {
+        "api_total": 17660,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17660
+      },
+      "1987-09-30": {
+        "api_total": 17560,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17560
+      },
+      "1987-12-31": {
+        "api_total": 17383,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17383
+      },
+      "1988-03-31": {
+        "api_total": 17203,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17203
+      },
+      "1988-06-30": {
+        "api_total": 17056,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 17056
+      },
+      "1988-09-30": {
+        "api_total": 16821,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 16821
+      },
+      "1988-12-31": {
+        "api_total": 16631,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 16631
+      },
+      "1989-03-31": {
+        "api_total": 16504,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 16504
+      },
+      "1989-06-30": {
+        "api_total": 16443,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 16443
+      },
+      "1989-09-30": {
+        "api_total": 16295,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 16295
+      },
+      "1989-12-31": {
+        "api_total": 16151,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 16151
+      },
+      "1990-03-31": {
+        "api_total": 16010,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 16010
+      },
+      "1990-06-30": {
+        "api_total": 15761,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 15761
+      },
+      "1990-09-30": {
+        "api_total": 15569,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 15569
+      },
+      "1990-12-31": {
+        "api_total": 15425,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 15425
+      },
+      "1991-03-31": {
+        "api_total": 15293,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 15293
+      },
+      "1991-06-30": {
+        "api_total": 15122,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 15122
+      },
+      "1991-09-30": {
+        "api_total": 14867,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 14867
+      },
+      "1991-12-31": {
+        "api_total": 14663,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 14663
+      },
+      "1992-03-31": {
+        "api_total": 14473,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 14473
+      },
+      "1992-06-30": {
+        "api_total": 14327,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 14327
+      },
+      "1992-09-30": {
+        "api_total": 14194,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 14194
+      },
+      "1992-12-31": {
+        "api_total": 14027,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 14027
+      },
+      "1993-03-31": {
+        "api_total": 13861,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 13861
+      },
+      "1993-06-30": {
+        "api_total": 13696,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 13696
+      },
+      "1993-09-30": {
+        "api_total": 13545,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 13545
+      },
+      "1993-12-31": {
+        "api_total": 13389,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 13389
+      },
+      "1994-03-31": {
+        "api_total": 13231,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 13231
+      },
+      "1994-06-30": {
+        "api_total": 13056,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 13056
+      },
+      "1994-09-30": {
+        "api_total": 12883,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 12883
+      },
+      "1994-12-31": {
+        "api_total": 12709,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 12709
+      },
+      "1995-03-31": {
+        "api_total": 12463,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 12463
+      },
+      "1995-06-30": {
+        "api_total": 12355,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 12355
+      },
+      "1995-09-30": {
+        "api_total": 12217,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 12217
+      },
+      "1995-12-31": {
+        "api_total": 12077,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 12077
+      },
+      "1996-03-31": {
+        "api_total": 11953,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11953
+      },
+      "1996-06-30": {
+        "api_total": 11774,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11774
+      },
+      "1996-09-30": {
+        "api_total": 11655,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11655
+      },
+      "1996-12-31": {
+        "api_total": 11561,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11561
+      },
+      "1997-03-31": {
+        "api_total": 11456,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11456
+      },
+      "1997-06-30": {
+        "api_total": 11285,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11285
+      },
+      "1997-09-30": {
+        "api_total": 11154,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11154
+      },
+      "1997-12-31": {
+        "api_total": 11046,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 11046
+      },
+      "1998-03-31": {
+        "api_total": 10908,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10908
+      },
+      "1998-06-30": {
+        "api_total": 10840,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10840
+      },
+      "1998-09-30": {
+        "api_total": 10747,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10747
+      },
+      "1998-12-31": {
+        "api_total": 10584,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10584
+      },
+      "1999-03-31": {
+        "api_total": 10515,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10515
+      },
+      "1999-06-30": {
+        "api_total": 10451,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10451
+      },
+      "1999-09-30": {
+        "api_total": 10395,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10395
+      },
+      "1999-12-31": {
+        "api_total": 10344,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10344
+      },
+      "2000-03-31": {
+        "api_total": 10274,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10274
+      },
+      "2000-06-30": {
+        "api_total": 10225,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10225
+      },
+      "2000-09-30": {
+        "api_total": 10112,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10112
+      },
+      "2000-12-31": {
+        "api_total": 10020,
+        "chunks": 2,
+        "complete": true,
+        "record_count_sum": 10020
+      },
+      "2001-03-31": {
+        "api_total": 9940,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9940
+      },
+      "2001-06-30": {
+        "api_total": 9863,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9863
+      },
+      "2001-09-30": {
+        "api_total": 9818,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9818
+      },
+      "2001-12-31": {
+        "api_total": 9731,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9731
+      },
+      "2002-03-31": {
+        "api_total": 9634,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9634
+      },
+      "2002-06-30": {
+        "api_total": 9579,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9579
+      },
+      "2002-09-30": {
+        "api_total": 9527,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9527
+      },
+      "2002-12-31": {
+        "api_total": 9464,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9464
+      },
+      "2003-03-31": {
+        "api_total": 9424,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9424
+      },
+      "2003-06-30": {
+        "api_total": 9379,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9379
+      },
+      "2003-09-30": {
+        "api_total": 9348,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9348
+      },
+      "2003-12-31": {
+        "api_total": 9296,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9296
+      },
+      "2004-03-31": {
+        "api_total": 9229,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9229
+      },
+      "2004-06-30": {
+        "api_total": 9190,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9190
+      },
+      "2004-09-30": {
+        "api_total": 9134,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9134
+      },
+      "2004-12-31": {
+        "api_total": 9084,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9084
+      },
+      "2005-03-31": {
+        "api_total": 9040,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 9040
+      },
+      "2005-06-30": {
+        "api_total": 8973,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8973
+      },
+      "2005-09-30": {
+        "api_total": 8964,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8964
+      },
+      "2005-12-31": {
+        "api_total": 8938,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8938
+      },
+      "2006-03-31": {
+        "api_total": 8894,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8894
+      },
+      "2006-06-30": {
+        "api_total": 8882,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8882
+      },
+      "2006-09-30": {
+        "api_total": 8848,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8848
+      },
+      "2006-12-31": {
+        "api_total": 8783,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8783
+      },
+      "2007-03-31": {
+        "api_total": 8750,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8750
+      },
+      "2007-06-30": {
+        "api_total": 8715,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8715
+      },
+      "2007-09-30": {
+        "api_total": 8658,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8658
+      },
+      "2007-12-31": {
+        "api_total": 8631,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8631
+      },
+      "2008-03-31": {
+        "api_total": 8588,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8588
+      },
+      "2008-06-30": {
+        "api_total": 8544,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8544
+      },
+      "2008-09-30": {
+        "api_total": 8476,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8476
+      },
+      "2008-12-31": {
+        "api_total": 8395,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8395
+      },
+      "2009-03-31": {
+        "api_total": 8337,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8337
+      },
+      "2009-06-30": {
+        "api_total": 8286,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8286
+      },
+      "2009-09-30": {
+        "api_total": 8190,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8190
+      },
+      "2009-12-31": {
+        "api_total": 8103,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8103
+      },
+      "2010-03-31": {
+        "api_total": 8024,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 8024
+      },
+      "2010-06-30": {
+        "api_total": 7922,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7922
+      },
+      "2010-09-30": {
+        "api_total": 7852,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7852
+      },
+      "2010-12-31": {
+        "api_total": 7747,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7747
+      },
+      "2011-03-31": {
+        "api_total": 7663,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7663
+      },
+      "2011-06-30": {
+        "api_total": 7601,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7601
+      },
+      "2011-09-30": {
+        "api_total": 7523,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7523
+      },
+      "2011-12-31": {
+        "api_total": 7443,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7443
+      },
+      "2012-03-31": {
+        "api_total": 7394,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7394
+      },
+      "2012-06-30": {
+        "api_total": 7331,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7331
+      },
+      "2012-09-30": {
+        "api_total": 7266,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7266
+      },
+      "2012-12-31": {
+        "api_total": 7166,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7166
+      },
+      "2013-03-31": {
+        "api_total": 7101,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7101
+      },
+      "2013-06-30": {
+        "api_total": 7022,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 7022
+      },
+      "2013-09-30": {
+        "api_total": 6972,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6972
+      },
+      "2013-12-31": {
+        "api_total": 6894,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6894
+      },
+      "2014-03-31": {
+        "api_total": 6812,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6812
+      },
+      "2014-06-30": {
+        "api_total": 6738,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6738
+      },
+      "2014-09-30": {
+        "api_total": 6668,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6668
+      },
+      "2014-12-31": {
+        "api_total": 6587,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6587
+      },
+      "2015-03-31": {
+        "api_total": 6496,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6496
+      },
+      "2015-06-30": {
+        "api_total": 6425,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6425
+      },
+      "2015-09-30": {
+        "api_total": 6345,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6345
+      },
+      "2015-12-31": {
+        "api_total": 6255,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6255
+      },
+      "2016-03-31": {
+        "api_total": 6193,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6193
+      },
+      "2016-06-30": {
+        "api_total": 6129,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6129
+      },
+      "2016-09-30": {
+        "api_total": 6051,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 6051
+      },
+      "2016-12-31": {
+        "api_total": 5983,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5983
+      },
+      "2017-03-31": {
+        "api_total": 5925,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5925
+      },
+      "2017-06-30": {
+        "api_total": 5856,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5856
+      },
+      "2017-09-30": {
+        "api_total": 5806,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5806
+      },
+      "2017-12-31": {
+        "api_total": 5738,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5738
+      },
+      "2018-03-31": {
+        "api_total": 5674,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5674
+      },
+      "2018-06-30": {
+        "api_total": 5610,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5610
+      },
+      "2018-09-30": {
+        "api_total": 5544,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5544
+      },
+      "2018-12-31": {
+        "api_total": 5473,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5473
+      },
+      "2019-03-31": {
+        "api_total": 5428,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5428
+      },
+      "2019-06-30": {
+        "api_total": 5369,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5369
+      },
+      "2019-09-30": {
+        "api_total": 5325,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5325
+      },
+      "2019-12-31": {
+        "api_total": 5244,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5244
+      },
+      "2020-03-31": {
+        "api_total": 5182,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5182
+      },
+      "2020-06-30": {
+        "api_total": 5131,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5131
+      },
+      "2020-09-30": {
+        "api_total": 5098,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5098
+      },
+      "2020-12-31": {
+        "api_total": 5067,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5067
+      },
+      "2021-03-31": {
+        "api_total": 5044,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5044
+      },
+      "2021-06-30": {
+        "api_total": 5015,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 5015
+      },
+      "2021-09-30": {
+        "api_total": 4979,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4979
+      },
+      "2021-12-31": {
+        "api_total": 4904,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4904
+      },
+      "2022-03-31": {
+        "api_total": 4861,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4861
+      },
+      "2022-06-30": {
+        "api_total": 4838,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4838
+      },
+      "2022-09-30": {
+        "api_total": 4813,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4813
+      },
+      "2022-12-31": {
+        "api_total": 4773,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4773
+      },
+      "2023-03-31": {
+        "api_total": 4740,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4740
+      },
+      "2023-06-30": {
+        "api_total": 4714,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4714
+      },
+      "2023-09-30": {
+        "api_total": 4686,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4686
+      },
+      "2023-12-31": {
+        "api_total": 4658,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4658
+      },
+      "2024-03-31": {
+        "api_total": 4640,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4640
+      },
+      "2024-06-30": {
+        "api_total": 4610,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4610
+      },
+      "2024-09-30": {
+        "api_total": 4589,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4589
+      },
+      "2024-12-31": {
+        "api_total": 4560,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4560
+      },
+      "2025-03-31": {
+        "api_total": 4536,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4536
+      },
+      "2025-06-30": {
+        "api_total": 4494,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4494
+      },
+      "2025-09-30": {
+        "api_total": 4452,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4452
+      },
+      "2025-12-31": {
+        "api_total": 4411,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4411
+      },
+      "2026-03-31": {
+        "api_total": 4353,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4353
+      },
+      "2026-06-30": {
+        "api_total": 4313,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4313
+      }
+    },
+    "small_table_totals": {
+      "failures": {
+        "api_total": 4117,
+        "chunks": 1,
+        "complete": true,
+        "record_count_sum": 4117
+      },
+      "institutions": {
+        "api_total": 27835,
+        "chunks": 3,
+        "complete": true,
+        "record_count_sum": 27835
+      }
+    }
+  },
+  "requested_period": {
+    "end": "2026-06-30",
+    "start": "1984-03-31"
+  },
+  "status": "ok"
+}

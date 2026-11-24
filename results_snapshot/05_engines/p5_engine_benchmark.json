@@ -1,0 +1,71 @@
+{
+  "processing_version": "part5-v1",
+  "source_files": 238,
+  "panel_joined": true,
+  "panel_path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\03_panel\\modeling_panel.parquet",
+  "source_rows_after_cleaning": 1682738,
+  "quarter_summary_rows": 170,
+  "repetitions": 5,
+  "sample_rows_requested": null,
+  "sample_rows_written": {
+    "pandas": 1682738,
+    "polars": 1682738
+  },
+  "cache_mode": "warm_only",
+  "operations": [
+    {
+      "engine": "pandas",
+      "median_seconds": 37.92987500000163,
+      "std_seconds": 0.5132107236575127,
+      "median_rss_endpoint_mb": 2115.01171875,
+      "median_peak_python_mb": 2323.879458427429
+    },
+    {
+      "engine": "polars",
+      "median_seconds": 1.3084011000028113,
+      "std_seconds": 0.40048898271260636,
+      "median_rss_endpoint_mb": 3519.59375,
+      "median_peak_python_mb": 0.3322277069091797
+    }
+  ],
+  "scaling_benchmark_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\05_engines\\p5_scaling_benchmark.csv",
+  "scaling_scope": "in-memory aggregation after the equivalent engine outputs have been materialized; not a distributed-cluster benchmark",
+  "output_equivalence": {
+    "equivalent": true,
+    "checks": {
+      "rows": {
+        "equivalent": true,
+        "pandas_rows": 1682738,
+        "polars_rows": 1682738,
+        "detail": "equal"
+      },
+      "quarter_summary": {
+        "equivalent": true,
+        "pandas_rows": 170,
+        "polars_rows": 170,
+        "detail": "equal"
+      }
+    }
+  },
+  "polars_plan_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\05_engines\\p5_polars_query_plan.txt",
+  "amdahl_scaling_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\05_engines\\p5_amdahl_scaling.csv",
+  "memory_profile": {
+    "panel_path": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\03_panel\\modeling_panel.parquet",
+    "panel_rows": 1597372,
+    "panel_in_memory_mb": 2146.57,
+    "system_total_ram_mb": 16088.49,
+    "system_available_ram_mb": 7079.12,
+    "panel_to_available_ram_pct": 30.3225,
+    "single_node_sufficient": true,
+    "methodology": "pandas memory_usage(deep=True) vs psutil.virtual_memory()"
+  },
+  "excluded_source_columns": [
+    "ID"
+  ],
+  "target_columns_not_features": [
+    "label",
+    "eligible_for_model"
+  ],
+  "feature_processing_note": "asset_to_deposit is an aligned descriptive transformation only; labels are never used to calculate it.",
+  "rss_note": "RSS is measured at operation endpoints; Python allocation peak is measured with tracemalloc. Results are warm-only."
+}

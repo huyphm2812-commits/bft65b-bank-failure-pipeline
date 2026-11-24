@@ -1,0 +1,737 @@
+{
+  "mode": "modeling",
+  "test_evaluated": true,
+  "feature_columns": [
+    "capital_ratio",
+    "loan_to_asset",
+    "noncurrent_loan_to_asset",
+    "ore_to_asset",
+    "cash_to_asset",
+    "securities_to_asset",
+    "roa_level",
+    "roe_level",
+    "nimy_level",
+    "rbc1a_level",
+    "rbcrwa_level",
+    "asset_growth_qoq",
+    "asset_growth_yoy",
+    "roa_rolling_4q_mean"
+  ],
+  "split": {
+    "train": {
+      "rows": 13810,
+      "positive": 147,
+      "positive_banks": 45,
+      "negative": 13663,
+      "min_date": "1984-03-31",
+      "max_date": "1987-12-31"
+    },
+    "development": {
+      "rows": 8921,
+      "positive": 159,
+      "positive_banks": 52,
+      "negative": 8762,
+      "min_date": "1989-03-31",
+      "max_date": "1991-12-31"
+    },
+    "test": {
+      "rows": 9638,
+      "positive": 10,
+      "positive_banks": 4,
+      "negative": 9628,
+      "min_date": "1993-03-31",
+      "max_date": "1996-12-31"
+    },
+    "train_end": "1988-12-31",
+    "dev_start": "1989-03-31",
+    "dev_end": "1991-12-31",
+    "test_start": "1993-01-01",
+    "test_end": "1996-12-31",
+    "label_cutoff": "2025-06-30",
+    "embargo_quarters": 4,
+    "purging_rule": "Training rows are retained only when horizon_end < the next split start.",
+    "min_dev_failures": 1,
+    "min_test_failures": 1,
+    "failure_count_definition": "distinct CERT values with label=1"
+  },
+  "models": {
+    "prior_baseline": {
+      "development_threshold_selection": {
+        "rule": "max_f1_on_development",
+        "development_f1": 0.03502202643171806,
+        "development_recall": 1.0,
+        "threshold": 0.0
+      },
+      "development_fpr_threshold_selection": {
+        "rule": "max_recall_at_development_fpr_limit",
+        "max_fpr": 0.1,
+        "threshold": 1.0,
+        "development_tpr": 0.0
+      },
+      "development_cost_threshold_selection": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 1538243.2847912668,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "row_fp_bank_fn",
+        "threshold": 1.0,
+        "def_mode": "a"
+      },
+      "development_cost_threshold_selection_def_b": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 718759.7110484999,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "bank",
+        "threshold": 0.010644460535843591,
+        "def_mode": "b"
+      },
+      "development_alarm_budgets": {
+        "top_1%": {
+          "budget_pct": 1.0,
+          "row_recall": 0.0,
+          "bank_recall": 0.0,
+          "caught_positive_rows": 0,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 0,
+          "total_failed_banks": 52
+        },
+        "top_2%": {
+          "budget_pct": 2.0,
+          "row_recall": 0.0189,
+          "bank_recall": 0.0192,
+          "caught_positive_rows": 3,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 1,
+          "total_failed_banks": 52
+        },
+        "top_5%": {
+          "budget_pct": 5.0,
+          "row_recall": 0.0189,
+          "bank_recall": 0.0192,
+          "caught_positive_rows": 3,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 1,
+          "total_failed_banks": 52
+        }
+      },
+      "expanding_window_validation": [
+        {
+          "validation_year": 1989,
+          "validation_date": "1989-03-31",
+          "train_rows": 13810,
+          "validation_rows": 3108,
+          "roc_auc": 0.5,
+          "pr_auc": 0.022844272844272845
+        },
+        {
+          "validation_year": 1990,
+          "validation_date": "1990-03-31",
+          "train_rows": 14597,
+          "validation_rows": 2989,
+          "roc_auc": 0.5,
+          "pr_auc": 0.01873536299765808
+        },
+        {
+          "validation_year": 1991,
+          "validation_date": "1991-03-31",
+          "train_rows": 17678,
+          "validation_rows": 2824,
+          "roc_auc": 0.5,
+          "pr_auc": 0.0113314447592068
+        }
+      ],
+      "test_metrics_at_development_f1_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.0010375596596804316,
+        "precision": 0.0010375596596804316,
+        "recall": 1.0,
+        "f1": 0.0020729684908789387,
+        "brier_score": 0.0011287756740774601,
+        "true_negatives": 0,
+        "false_positives": 9628,
+        "false_negatives": 0,
+        "true_positives": 10,
+        "false_positive_rate": 1.0,
+        "expected_loss": 640160.164254,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_fpr_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 1.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.0010375596596804316,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "brier_score": 0.0011287756740774601,
+        "true_negatives": 9628,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "true_positives": 0,
+        "false_positive_rate": 0.0,
+        "expected_loss": 142683.03073,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_cost_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 1.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.0010375596596804316,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "brier_score": 0.0011287756740774601,
+        "true_negatives": 9628,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "true_positives": 0,
+        "false_positive_rate": 0.0,
+        "expected_loss": 142683.03073,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      }
+    },
+    "always_negative_baseline": {
+      "development_threshold_selection": {
+        "rule": "max_f1_on_development",
+        "development_f1": 0.03502202643171806,
+        "development_recall": 1.0,
+        "threshold": 0.0
+      },
+      "development_fpr_threshold_selection": {
+        "rule": "max_recall_at_development_fpr_limit",
+        "max_fpr": 0.1,
+        "threshold": 1.0,
+        "development_tpr": 0.0
+      },
+      "development_cost_threshold_selection": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 1538243.2847912668,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "row_fp_bank_fn",
+        "threshold": 1.0,
+        "def_mode": "a"
+      },
+      "development_cost_threshold_selection_def_b": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 718759.7110484999,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "bank",
+        "threshold": 0.0,
+        "def_mode": "b"
+      },
+      "development_alarm_budgets": {
+        "top_1%": {
+          "budget_pct": 1.0,
+          "row_recall": 0.0,
+          "bank_recall": 0.0,
+          "caught_positive_rows": 0,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 0,
+          "total_failed_banks": 52
+        },
+        "top_2%": {
+          "budget_pct": 2.0,
+          "row_recall": 0.0189,
+          "bank_recall": 0.0192,
+          "caught_positive_rows": 3,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 1,
+          "total_failed_banks": 52
+        },
+        "top_5%": {
+          "budget_pct": 5.0,
+          "row_recall": 0.0189,
+          "bank_recall": 0.0192,
+          "caught_positive_rows": 3,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 1,
+          "total_failed_banks": 52
+        }
+      },
+      "expanding_window_validation": [
+        {
+          "validation_year": 1989,
+          "validation_date": "1989-03-31",
+          "train_rows": 13810,
+          "validation_rows": 3108,
+          "roc_auc": 0.5,
+          "pr_auc": 0.022844272844272845
+        },
+        {
+          "validation_year": 1990,
+          "validation_date": "1990-03-31",
+          "train_rows": 14597,
+          "validation_rows": 2989,
+          "roc_auc": 0.5,
+          "pr_auc": 0.01873536299765808
+        },
+        {
+          "validation_year": 1991,
+          "validation_date": "1991-03-31",
+          "train_rows": 17678,
+          "validation_rows": 2824,
+          "roc_auc": 0.5,
+          "pr_auc": 0.0113314447592068
+        }
+      ],
+      "test_metrics_at_development_f1_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.0010375596596804316,
+        "precision": 0.0010375596596804316,
+        "recall": 1.0,
+        "f1": 0.0020729684908789387,
+        "brier_score": 0.0010375596596804316,
+        "true_negatives": 0,
+        "false_positives": 9628,
+        "false_negatives": 0,
+        "true_positives": 10,
+        "false_positive_rate": 1.0,
+        "expected_loss": 640160.164254,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_fpr_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 1.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.0010375596596804316,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "brier_score": 0.0010375596596804316,
+        "true_negatives": 9628,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "true_positives": 0,
+        "false_positive_rate": 0.0,
+        "expected_loss": 142683.03073,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_cost_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 1.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.0010375596596804316,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "brier_score": 0.0010375596596804316,
+        "true_negatives": 9628,
+        "false_positives": 0,
+        "false_negatives": 10,
+        "true_positives": 0,
+        "false_positive_rate": 0.0,
+        "expected_loss": 142683.03073,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      }
+    },
+    "logistic_regression": {
+      "development_threshold_selection": {
+        "rule": "max_f1_on_development",
+        "development_f1": 0.4433497536945813,
+        "development_recall": 0.5660377358490566,
+        "threshold": 0.8652384197377168
+      },
+      "development_fpr_threshold_selection": {
+        "rule": "max_recall_at_development_fpr_limit",
+        "max_fpr": 0.1,
+        "threshold": 0.3646524524161607,
+        "development_tpr": 0.7924528301886793,
+        "development_fpr": 0.09598265236247432
+      },
+      "development_cost_threshold_selection": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 298477.9704293,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "row_fp_bank_fn",
+        "threshold": 0.8794719139644721,
+        "def_mode": "a"
+      },
+      "development_cost_threshold_selection_def_b": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 193607.64761379999,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "bank",
+        "threshold": 0.5747110751591529,
+        "def_mode": "b"
+      },
+      "development_alarm_budgets": {
+        "top_1%": {
+          "budget_pct": 1.0,
+          "row_recall": 0.2453,
+          "bank_recall": 0.4038,
+          "caught_positive_rows": 39,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 21,
+          "total_failed_banks": 52
+        },
+        "top_2%": {
+          "budget_pct": 2.0,
+          "row_recall": 0.4717,
+          "bank_recall": 0.6538,
+          "caught_positive_rows": 75,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 34,
+          "total_failed_banks": 52
+        },
+        "top_5%": {
+          "budget_pct": 5.0,
+          "row_recall": 0.6604,
+          "bank_recall": 0.75,
+          "caught_positive_rows": 105,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 39,
+          "total_failed_banks": 52
+        }
+      },
+      "expanding_window_validation": [
+        {
+          "validation_year": 1989,
+          "validation_date": "1989-03-31",
+          "train_rows": 13810,
+          "validation_rows": 3108,
+          "roc_auc": 0.8347331271130238,
+          "pr_auc": 0.22929911928886412
+        },
+        {
+          "validation_year": 1990,
+          "validation_date": "1990-03-31",
+          "train_rows": 14597,
+          "validation_rows": 2989,
+          "roc_auc": 0.9859237250986315,
+          "pr_auc": 0.49989020679996593
+        },
+        {
+          "validation_year": 1991,
+          "validation_date": "1991-03-31",
+          "train_rows": 17678,
+          "validation_rows": 2824,
+          "roc_auc": 0.987632073782235,
+          "pr_auc": 0.6606187566086015
+        }
+      ],
+      "test_metrics_at_development_f1_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.8652384197377168,
+        "roc_auc": 0.9939551308683008,
+        "pr_auc": 0.23639247730875426,
+        "precision": 0.08333333333333333,
+        "recall": 0.7,
+        "f1": 0.14893617021276595,
+        "brier_score": 0.018932583763781277,
+        "true_negatives": 9551,
+        "false_positives": 77,
+        "false_negatives": 3,
+        "true_positives": 7,
+        "false_positive_rate": 0.007997507270461154,
+        "expected_loss": 123015.637294,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_fpr_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.3646524524161607,
+        "roc_auc": 0.9939551308683008,
+        "pr_auc": 0.23639247730875426,
+        "precision": 0.03289473684210526,
+        "recall": 1.0,
+        "f1": 0.06369426751592357,
+        "brier_score": 0.018932583763781277,
+        "true_negatives": 9334,
+        "false_positives": 294,
+        "false_negatives": 0,
+        "true_positives": 10,
+        "false_positive_rate": 0.030535936850851684,
+        "expected_loss": 53978.002015499995,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_cost_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.8794719139644721,
+        "roc_auc": 0.9939551308683008,
+        "pr_auc": 0.23639247730875426,
+        "precision": 0.08536585365853659,
+        "recall": 0.7,
+        "f1": 0.15217391304347827,
+        "brier_score": 0.018932583763781277,
+        "true_negatives": 9553,
+        "false_positives": 75,
+        "false_negatives": 3,
+        "true_positives": 7,
+        "false_positive_rate": 0.007789779808890735,
+        "expected_loss": 122068.65480250001,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      }
+    },
+    "random_forest": {
+      "development_threshold_selection": {
+        "rule": "max_f1_on_development",
+        "development_f1": 0.4696132596685083,
+        "development_recall": 0.5345911949685535,
+        "threshold": 0.3003236048474196
+      },
+      "development_fpr_threshold_selection": {
+        "rule": "max_recall_at_development_fpr_limit",
+        "max_fpr": 0.1,
+        "threshold": 0.04847523691479803,
+        "development_tpr": 0.9056603773584906,
+        "development_fpr": 0.09883588221867154
+      },
+      "development_cost_threshold_selection": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 272091.0323142666,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "row_fp_bank_fn",
+        "threshold": 0.2945432773531791,
+        "def_mode": "a"
+      },
+      "development_cost_threshold_selection_def_b": {
+        "rule": "minimum_development_expected_loss",
+        "development_expected_loss": 101904.73634979999,
+        "false_positive_cost": 946.9824914999999,
+        "false_negative_cost_source": "one development COST per failed CERT; missing values imputed to development median",
+        "cost_unit": "bank",
+        "threshold": 0.14562326253555902,
+        "def_mode": "b"
+      },
+      "development_alarm_budgets": {
+        "top_1%": {
+          "budget_pct": 1.0,
+          "row_recall": 0.2767,
+          "bank_recall": 0.4423,
+          "caught_positive_rows": 44,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 23,
+          "total_failed_banks": 52
+        },
+        "top_2%": {
+          "budget_pct": 2.0,
+          "row_recall": 0.4843,
+          "bank_recall": 0.6538,
+          "caught_positive_rows": 77,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 34,
+          "total_failed_banks": 52
+        },
+        "top_5%": {
+          "budget_pct": 5.0,
+          "row_recall": 0.7547,
+          "bank_recall": 0.8846,
+          "caught_positive_rows": 120,
+          "total_positive_rows": 159,
+          "caught_failed_banks": 46,
+          "total_failed_banks": 52
+        }
+      },
+      "expanding_window_validation": [
+        {
+          "validation_year": 1989,
+          "validation_date": "1989-03-31",
+          "train_rows": 13810,
+          "validation_rows": 3108,
+          "roc_auc": 0.9307415119627876,
+          "pr_auc": 0.33929570487818733
+        },
+        {
+          "validation_year": 1990,
+          "validation_date": "1990-03-31",
+          "train_rows": 14597,
+          "validation_rows": 2989,
+          "roc_auc": 0.9794396278797914,
+          "pr_auc": 0.5868857126001129
+        },
+        {
+          "validation_year": 1991,
+          "validation_date": "1991-03-31",
+          "train_rows": 17678,
+          "validation_rows": 2824,
+          "roc_auc": 0.9859755551575933,
+          "pr_auc": 0.5315796931022275
+        }
+      ],
+      "test_metrics_at_development_f1_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.3003236048474196,
+        "roc_auc": 0.995513086830079,
+        "pr_auc": 0.15367431352034203,
+        "precision": 0.1346153846153846,
+        "recall": 0.7,
+        "f1": 0.22580645161290322,
+        "brier_score": 0.0019302242766535732,
+        "true_negatives": 9583,
+        "false_positives": 45,
+        "false_negatives": 3,
+        "true_positives": 7,
+        "false_positive_rate": 0.004673867885334441,
+        "expected_loss": 118280.7248365,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_fpr_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.04847523691479803,
+        "roc_auc": 0.995513086830079,
+        "pr_auc": 0.15367431352034203,
+        "precision": 0.03257328990228013,
+        "recall": 1.0,
+        "f1": 0.06309148264984227,
+        "brier_score": 0.0019302242766535732,
+        "true_negatives": 9331,
+        "false_positives": 297,
+        "false_negatives": 0,
+        "true_positives": 10,
+        "false_positive_rate": 0.030847528043207312,
+        "expected_loss": 74811.61682849999,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      },
+      "test_metrics_at_development_cost_threshold": {
+        "rows": 9638,
+        "positives": 10,
+        "threshold": 0.2945432773531791,
+        "roc_auc": 0.995513086830079,
+        "pr_auc": 0.15367431352034203,
+        "precision": 0.1320754716981132,
+        "recall": 0.7,
+        "f1": 0.2222222222222222,
+        "brier_score": 0.0019302242766535732,
+        "true_negatives": 9582,
+        "false_positives": 46,
+        "false_negatives": 3,
+        "true_positives": 7,
+        "false_positive_rate": 0.004777731616119651,
+        "expected_loss": 118280.7248365,
+        "false_negative_cost": "development-median-imputed COST per failed CERT",
+        "false_positive_cost": 946.9824914999999,
+        "cost_unit": "bank"
+      }
+    }
+  },
+  "spark_mllib": {
+    "ran": false,
+    "note": "Not requested; pass --spark-mllib together with --evaluate-test after the full run."
+  },
+  "leakage_controls": {
+    "feature_table_built_before_eligibility_filter": true,
+    "forbidden_columns": [
+      "ACTIVE",
+      "CHANGEC1",
+      "eligible_for_model",
+      "exit_classification",
+      "failure_cost_numeric",
+      "failure_date",
+      "institution_end_date",
+      "label",
+      "label_status"
+    ],
+    "preprocessing_fit_scope": "training split only via sklearn Pipeline",
+    "threshold_fit_scope": "development split only",
+    "expanding_window_validation_scope": "development only",
+    "future_perturbation_check": {
+      "passed": true,
+      "perturbed_columns": [
+        "ACTIVE",
+        "CHANGEC1",
+        "eligible_for_model",
+        "exit_classification",
+        "failure_cost_numeric",
+        "failure_date",
+        "institution_end_date",
+        "label",
+        "label_status"
+      ],
+      "feature_columns_checked": [
+        "capital_ratio",
+        "loan_to_asset",
+        "noncurrent_loan_to_asset",
+        "ore_to_asset",
+        "cash_to_asset",
+        "securities_to_asset",
+        "roa_level",
+        "roe_level",
+        "nimy_level",
+        "rbc1a_level",
+        "rbcrwa_level",
+        "asset_growth_qoq",
+        "asset_growth_yoy",
+        "roa_rolling_4q_mean"
+      ]
+    },
+    "test_used_once_for_final_metrics": true,
+    "test_evaluation_lock": "..\\02_local_workspace\\outputs\\07_features_models_rehearsal\\p7_test_evaluation_rehearsal.lock",
+    "feature_selection_scope": "pre-specified economic features; no outcome-driven selection",
+    "feature_timing": "Financials at q plus exact historical lags; financial availability assumed at q + configured reporting lag from Part 3."
+  },
+  "costs": {
+    "false_negative_cost_override": null,
+    "false_positive_cost_override": null,
+    "false_positive_cost_rate": 0.1,
+    "policy": {
+      "status": "available",
+      "median_development_failure_cost": 9469.824915,
+      "positive_failed_banks": 52,
+      "observed_failed_banks_with_COST": 52,
+      "missing_failed_bank_COST_imputed": 0,
+      "imputation_rule": "Missing positive-bank COST is replaced with the median non-null development failure COST.",
+      "primary_false_positive_cost": 946.9824914999999,
+      "primary_source": "median development failure COST multiplied by rate 0.10",
+      "false_positive_cost_rate": 0.1,
+      "sensitivity_rates": [
+        0.05,
+        0.1,
+        0.25,
+        0.5
+      ],
+      "sensitivity_false_positive_costs": {
+        "0.05": 473.49124574999996,
+        "0.1": 946.9824914999999,
+        "0.25": 2367.45622875,
+        "0.5": 4734.9124575
+      }
+    },
+    "sensitivity_file": "..\\02_local_workspace\\outputs\\07_features_models_rehearsal\\p7_cost_sensitivity.csv",
+    "ratio_sensitivity_file": "..\\02_local_workspace\\outputs\\07_features_models_rehearsal\\p7_cost_sensitivity_ratios.csv",
+    "invented_costs": false,
+    "cost_unit": "bank",
+    "cost_threshold_requires_development_failure_cost": true
+  }
+}

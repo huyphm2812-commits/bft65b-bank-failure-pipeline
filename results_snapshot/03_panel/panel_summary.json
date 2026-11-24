@@ -1,0 +1,37 @@
+{
+  "rows": 1682738,
+  "eligible_for_model": 1597372,
+  "positive_labels": 10823,
+  "negative_labels": 1586549,
+  "censored_or_unlabeled": 85366,
+  "label_cutoff": "2025-06-30",
+  "reporting_lag_days": 45,
+  "reporting_lag_used_for": "financial_available_date and point-in-time documentation",
+  "quarter_frequency": "QE-DEC",
+  "label_rule": "1 iff failure_date in (REPDTE, REPDTE+4Q] and no earlier non-failure exit; 0 only with complete observed future reports and no exit; otherwise missing.",
+  "excluded_from_features": [
+    "failure_date",
+    "failure_cost_numeric",
+    "institution_end_date",
+    "ACTIVE",
+    "CHANGEC1",
+    "label",
+    "label_status",
+    "eligible_for_model"
+  ],
+  "split_applied": false,
+  "merger_policy": "censor",
+  "merger_policy_sensitivity": {
+    "standard_policy": "censor",
+    "sensitivity_policy": "negative",
+    "standard_eligible_rows": 1597372,
+    "sensitivity_eligible_rows": 1662274,
+    "standard_positive_labels": 10823,
+    "sensitivity_positive_labels": 10823,
+    "standard_negative_labels": 1586549,
+    "sensitivity_negative_labels": 1651451,
+    "difference_in_eligible_rows": 64902,
+    "note": "Sensitivity only; the standard model uses merger/other censoring because the assignment defines mergers as not failures and their future exposure is not a comparable failure-negative outcome."
+  },
+  "failures_per_year_file": "C:\\Users\\QUANGHUY\\Downloads\\bigdata\\BFT65B_FINAL\\02_local_workspace\\outputs\\03_panel\\failures_per_year.csv"
+}

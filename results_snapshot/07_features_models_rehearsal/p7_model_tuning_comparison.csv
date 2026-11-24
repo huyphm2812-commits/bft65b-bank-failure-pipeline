@@ -1,0 +1,13 @@
+model_family,scaler,imputer,select_k_best,C,max_depth,min_samples_leaf,sample_size,dev_pr_auc,dev_roc_auc,mean_cv_pr_auc,mean_cv_roc_auc,notes
+logistic_regression,StandardScaler,SimpleImputer(add_indicator=True),none,1.0,none,none,13810,0.3193,0.9009,,,Scaler comparison on development split; StandardScaler
+logistic_regression,RobustScaler,SimpleImputer(add_indicator=True),none,1.0,none,none,13810,0.3581,0.9096,,,Scaler comparison on development split; RobustScaler
+logistic_regression,QuantileTransformer,SimpleImputer(add_indicator=True),none,1.0,none,none,13810,0.1019,0.7845,,,Scaler comparison on development split; QuantileTransformer
+logistic_regression,RobustScaler,SimpleImputer(add_indicator=True),SelectKBest(k=10),1.0,none,none,13810,0.2877,0.8664,,,Optional feature selection with SelectKBest(f_classif)
+logistic_regression,RobustScaler,SimpleImputer(add_indicator=True),none,0.01,none,none,13810,0.3859,0.9344,0.4644,0.9512,LR hyperparameter tuning C=0.01 scored via annual expanding window
+logistic_regression,RobustScaler,SimpleImputer(add_indicator=True),none,0.1,none,none,13810,0.3692,0.918,0.4522,0.9394,LR hyperparameter tuning C=0.1 scored via annual expanding window
+logistic_regression,RobustScaler,SimpleImputer(add_indicator=True),none,1.0,none,none,13810,0.3581,0.9096,0.466,0.9355,LR hyperparameter tuning C=1.0 scored via annual expanding window
+logistic_regression,RobustScaler,SimpleImputer(add_indicator=True),none,10.0,none,none,13810,0.3565,0.9087,0.4768,0.9356,LR hyperparameter tuning C=10.0 scored via annual expanding window
+random_forest,none,SimpleImputer(add_indicator=True),none,none,None,5,13810,0.4175,0.9563,0.4859,0.9654,"RF grid tuning max_depth=None, min_leaf=5"
+random_forest,none,SimpleImputer(add_indicator=True),none,none,10,5,13810,0.3938,0.9578,0.4713,0.9666,"RF grid tuning max_depth=10, min_leaf=5"
+random_forest,none,SimpleImputer(add_indicator=True),none,none,15,20,13810,0.4071,0.9601,0.4662,0.9686,"RF grid tuning max_depth=15, min_leaf=20"
+logistic_regression,StandardScaler,KNNImputer(k=5),none,1.0,none,none,500,0.3997,0.953,,,KNNImputer evaluated on subsample only; full dataset KNN on 1.6M rows is computationally intractable O(N^2 * D)

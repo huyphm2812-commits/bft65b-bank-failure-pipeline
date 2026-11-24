@@ -1,0 +1,32 @@
+api_base: http://127.0.0.1:8765/banks
+start_date: "2020-03-31"
+end_date: "2024-12-31"
+train_end: "2021-12-31"
+dev_start: "2022-03-31"
+dev_end: "2022-12-31"
+test_start: "2024-01-01"
+test_end: "2024-06-30"
+label_cutoff: "2024-12-31"
+min_dev_failures: 1
+min_test_failures: 1
+page_size: 10000
+timeout_seconds: 15
+max_retries: 2
+backoff_seconds: 0.1
+compression: snappy
+random_seed: 42
+paths:
+  raw: ../02_local_workspace/smoke/data/raw
+  processed: ../02_local_workspace/smoke/data/processed
+  manifests: ../02_local_workspace/smoke/manifests
+  logs: ../02_local_workspace/smoke/logs
+  tmp: ../02_local_workspace/smoke/tmp
+  outputs: ../02_local_workspace/smoke/outputs
+  out_acquisition: ../02_local_workspace/smoke/outputs/01_acquisition
+  out_quality: ../02_local_workspace/smoke/outputs/02_quality
+  out_panel: ../02_local_workspace/smoke/outputs/03_panel
+  out_benchmark: ../02_local_workspace/smoke/outputs/04_storage_benchmark
+  out_engines: ../02_local_workspace/smoke/outputs/05_engines
+  out_spark: ../02_local_workspace/smoke/outputs/06_spark
+  out_models: ../02_local_workspace/smoke/outputs/07_features_models
+  out_repro: ../02_local_workspace/smoke/outputs/08_reproducibility

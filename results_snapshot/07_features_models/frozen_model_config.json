@@ -1,0 +1,44 @@
+{
+  "status": "FROZEN",
+  "purpose": "Final frozen configuration for held-out test evaluation",
+  "frozen_timestamp_utc": "2026-11-23T06:03:38.135245+00:00",
+  "split": {
+    "train_end": "1992-12-31",
+    "dev_start": "1993-03-31",
+    "dev_end": "2005-12-31",
+    "test_start": "2008-01-01",
+    "test_end": "2014-12-31"
+  },
+  "feature_selection": {
+    "variant": "variant_3",
+    "rule": "simplest variant whose development PR-AUC paired difference against best has 95% bootstrap CI including zero"
+  },
+  "primary_model": {
+    "model_family": "random_forest",
+    "seed": 42,
+    "training_policy": "train_only",
+    "hyperparameters": {
+      "n_estimators": 100,
+      "min_samples_leaf": 5,
+      "class_weight": "balanced_subsample",
+      "max_samples": null,
+      "n_jobs": 2
+    }
+  },
+  "decision_threshold": {
+    "loss_definition": "DEF_A",
+    "fn_fp_ratio": "100:1",
+    "chosen_threshold": 0.10399,
+    "expected_loss_development": 1061061.21,
+    "banks_caught_development": "87/100"
+  },
+  "reproducibility_hashes": {
+    "code_files": {
+      "pipeline_py": "75e8e6c05146f8978b0630cc60422bfdcd91bf68bd29b5eda6a08f7f1064f560",
+      "dev_analysis_py": "18845e1c3bd0fc9b8004f65bf1da7d22f01737b74f993d8f9bfeaa40f5241446",
+      "builder_py": "5025ccbfa0d40f8989efef894b55fb0f25aba3df8f6bf8aa2f8039ea8819fc99"
+    },
+    "panel_parquet": "499268aceef439a402a76e73ddd1a397d9294c140c3364c5150c3dc65f40e0d5"
+  },
+  "sha256_hash": "13e6acfa734c9232e4d75e0282e972e7746b43d55809ce1d8bad4baa6aa1a20f"
+}
