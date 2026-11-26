@@ -10,9 +10,12 @@ tmp/
 # Data and large binary artifacts
 *.parquet
 *.csv.gz
+*.json.gz
 *.ipc
 *.arrow
 *.joblib
+*.pkl
+*.lock
 
 # Environment, secrets, and caches
 .venv/
@@ -23,5 +26,8 @@ __pycache__/
 *.pyc
 *.pyo
 .pytest_cache/
+.ipynb_checkpoints/
 .coverage
 htmlcov/
+.DS_Store
+Thumbs.db

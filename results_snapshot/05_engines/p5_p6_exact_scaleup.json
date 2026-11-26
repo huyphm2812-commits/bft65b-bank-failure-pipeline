@@ -1,0 +1,128 @@
+{
+  "workload": "Exact Table 3.1 workload: 238-file scan (k replicas), cast/filter, asset_to_deposit, sort (CERT, REPDTE), gap-aware 1Q lag, left-join modeling_panel (4 cols, k replicas), materialize (.collect()/.count()), and 170-quarter summary.",
+  "matched_threads": 4,
+  "matched_memory_cap_mib": 4096.0,
+  "note": "Local Spark (local[4]) is a single-machine JVM with local disk spill, not a multi-node cluster.",
+  "results": [
+    {
+      "engine": "polars_eager_4thr",
+      "multiplier": 1,
+      "rows": 1682738,
+      "summary_rows": 170,
+      "seconds": 2.2953,
+      "peak_rss_mib": 1454.82,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_eager_4thr",
+      "multiplier": 2,
+      "rows": 3365476,
+      "summary_rows": 170,
+      "seconds": 6.6904,
+      "peak_rss_mib": 2471.45,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_eager_4thr",
+      "multiplier": 3,
+      "rows": 5048214,
+      "summary_rows": 170,
+      "seconds": 10.3102,
+      "peak_rss_mib": 3844.45,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_eager_4thr",
+      "multiplier": 5,
+      "rows": 8413690,
+      "summary_rows": 170,
+      "seconds": 19.0846,
+      "peak_rss_mib": 6311.27,
+      "cap_mib": 4096.0,
+      "status": "EXCEEDS_4GIB_CAP"
+    },
+    {
+      "engine": "polars_streaming_4thr",
+      "multiplier": 1,
+      "rows": 1682738,
+      "summary_rows": 170,
+      "seconds": 1.5383,
+      "peak_rss_mib": 1484.93,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_streaming_4thr",
+      "multiplier": 2,
+      "rows": 3365476,
+      "summary_rows": 170,
+      "seconds": 2.8868,
+      "peak_rss_mib": 3006.95,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_streaming_4thr",
+      "multiplier": 3,
+      "rows": 5048214,
+      "summary_rows": 170,
+      "seconds": 5.601,
+      "peak_rss_mib": 4665.34,
+      "cap_mib": 4096.0,
+      "status": "EXCEEDS_4GIB_CAP"
+    },
+    {
+      "engine": "polars_streaming_4thr",
+      "multiplier": 5,
+      "rows": 8413690,
+      "summary_rows": 170,
+      "seconds": 10.1339,
+      "peak_rss_mib": 7272.41,
+      "cap_mib": 4096.0,
+      "status": "EXCEEDS_4GIB_CAP"
+    },
+    {
+      "engine": "spark_local4_4g",
+      "multiplier": 1,
+      "rows": 1682738,
+      "summary_rows": 170,
+      "seconds": 51.4135,
+      "peak_rss_mib": 2079.57,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "spark_local4_4g",
+      "multiplier": 2,
+      "rows": 3365476,
+      "summary_rows": 170,
+      "seconds": 40.8255,
+      "peak_rss_mib": 2094.18,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "spark_local4_4g",
+      "multiplier": 3,
+      "rows": 5048214,
+      "summary_rows": 170,
+      "seconds": 66.2285,
+      "peak_rss_mib": 2098.48,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    },
+    {
+      "engine": "spark_local4_4g",
+      "multiplier": 5,
+      "rows": 8413690,
+      "summary_rows": 170,
+      "seconds": 87.1786,
+      "peak_rss_mib": 2063.0,
+      "cap_mib": 4096.0,
+      "status": "OK"
+    }
+  ]
+}

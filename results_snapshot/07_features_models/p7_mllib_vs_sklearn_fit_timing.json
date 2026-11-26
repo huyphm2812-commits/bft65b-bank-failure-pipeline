@@ -1,0 +1,20 @@
+{
+  "train_rows": 522402,
+  "dev_rows": 532620,
+  "features": "variant_3 (12 features)",
+  "spark_data_prep_and_cache_sec": 5.3704,
+  "mllib_default_v3": {
+    "fit_only_sec": 10.4997,
+    "dev_score_sec": 6.6265,
+    "dev_roc_auc": 0.901562,
+    "dev_pr_auc": 0.109054,
+    "spec": "mean imputer, no missing indicators, withMean=False, unweighted, regParam=0.0, maxIter=50"
+  },
+  "mllib_aligned_v3": {
+    "fit_only_sec": 8.0897,
+    "dev_roc_auc": 0.907997,
+    "dev_pr_auc": 0.128517,
+    "spec": "median imputer, no missing indicators, withMean=True, balanced weightCol, L2 regParam=1/N, maxIter=100"
+  },
+  "total_wall_sec": 39.9503
+}

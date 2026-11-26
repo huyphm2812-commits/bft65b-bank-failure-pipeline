@@ -1,0 +1,23 @@
+{
+  "definition": "Eligible positive rows (label==1) where 0 < (failure_date - REPDTE).days <= 45",
+  "all_eligible": {
+    "total_positive_rows": 10823,
+    "fail_within_45d": 1098,
+    "share_pct": 10.15
+  },
+  "train_1984_1991": {
+    "total_positive_rows": 7955,
+    "fail_within_45d": 674,
+    "share_pct": 8.47
+  },
+  "dev_1993_2005": {
+    "total_positive_rows": 308,
+    "fail_within_45d": 33,
+    "share_pct": 10.71
+  },
+  "test_2008_2014": {
+    "total_positive_rows": 2005,
+    "fail_within_45d": 303,
+    "share_pct": 15.11
+  }
+}

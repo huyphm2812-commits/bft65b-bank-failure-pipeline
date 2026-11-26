@@ -1,0 +1,235 @@
+{
+  "protocol": "Isolated fresh subprocess per operation; true OS kernel PeakWorkingSetSize (psutil peak_wset in MiB); no tracemalloc instrumentation overhead; pandas to_csv defaults (single-threaded); warm-only cache for reads.",
+  "formats": {
+    "csv": {
+      "bytes": 448089884,
+      "mib": 427.33,
+      "bytes_per_row": 266.29
+    },
+    "gzip_csv": {
+      "bytes": 175135035,
+      "mib": 167.02,
+      "bytes_per_row": 104.08
+    },
+    "single_snappy": {
+      "bytes": 180809602,
+      "mib": 172.43,
+      "bytes_per_row": 107.45
+    },
+    "single_zstd": {
+      "bytes": 150918711,
+      "mib": 143.93,
+      "bytes_per_row": 89.69
+    },
+    "year_partitioned_snappy": {
+      "bytes": 226589220,
+      "mib": 216.09,
+      "bytes_per_row": 134.66
+    },
+    "year_partitioned_zstd": {
+      "bytes": 188412595,
+      "mib": 179.68,
+      "bytes_per_row": 111.97
+    }
+  },
+  "operations": [
+    {
+      "operation": "read_csv_full",
+      "reps": 3,
+      "median_seconds": 3.9701,
+      "std_seconds": 0.0201,
+      "min_seconds": 3.9435,
+      "max_seconds": 3.9829,
+      "peak_rss_mib": 930.07,
+      "rows": 1682738,
+      "rep_times": "3.9829;3.9435;3.9701"
+    },
+    {
+      "operation": "read_csv_selected_columns",
+      "reps": 3,
+      "median_seconds": 2.0347,
+      "std_seconds": 0.0075,
+      "min_seconds": 2.0269,
+      "max_seconds": 2.0419,
+      "peak_rss_mib": 207.61,
+      "rows": 1682738,
+      "rep_times": "2.0347;2.0419;2.0269"
+    },
+    {
+      "operation": "read_csv_date_filter",
+      "reps": 3,
+      "median_seconds": 3.9355,
+      "std_seconds": 0.0125,
+      "min_seconds": 3.9167,
+      "max_seconds": 3.9402,
+      "peak_rss_mib": 930.21,
+      "rows": 123461,
+      "rep_times": "3.9167;3.9402;3.9355"
+    },
+    {
+      "operation": "read_gzip_csv_full",
+      "reps": 3,
+      "median_seconds": 5.944,
+      "std_seconds": 0.0605,
+      "min_seconds": 5.8414,
+      "max_seconds": 5.9483,
+      "peak_rss_mib": 931.7,
+      "rows": 1682738,
+      "rep_times": "5.8414;5.9483;5.9440"
+    },
+    {
+      "operation": "read_single_parquet_snappy_full",
+      "reps": 3,
+      "median_seconds": 0.334,
+      "std_seconds": 0.0022,
+      "min_seconds": 0.3334,
+      "max_seconds": 0.3374,
+      "peak_rss_mib": 1356.41,
+      "rows": 1682738,
+      "rep_times": "0.3374;0.3340;0.3334"
+    },
+    {
+      "operation": "read_single_parquet_zstd_full",
+      "reps": 3,
+      "median_seconds": 0.3146,
+      "std_seconds": 0.0049,
+      "min_seconds": 0.3072,
+      "max_seconds": 0.3164,
+      "peak_rss_mib": 1374.06,
+      "rows": 1682738,
+      "rep_times": "0.3146;0.3164;0.3072"
+    },
+    {
+      "operation": "read_single_parquet_selected_columns",
+      "reps": 3,
+      "median_seconds": 0.0364,
+      "std_seconds": 0.0016,
+      "min_seconds": 0.0364,
+      "max_seconds": 0.0393,
+      "peak_rss_mib": 328.55,
+      "rows": 1682738,
+      "rep_times": "0.0393;0.0364;0.0364"
+    },
+    {
+      "operation": "read_single_parquet_date_filter",
+      "reps": 3,
+      "median_seconds": 0.0741,
+      "std_seconds": 0.01,
+      "min_seconds": 0.0739,
+      "max_seconds": 0.0913,
+      "peak_rss_mib": 606.85,
+      "rows": 123461,
+      "rep_times": "0.0913;0.0741;0.0739"
+    },
+    {
+      "operation": "read_year_partitioned_snappy_full",
+      "reps": 3,
+      "median_seconds": 0.3284,
+      "std_seconds": 0.0031,
+      "min_seconds": 0.3277,
+      "max_seconds": 0.3334,
+      "peak_rss_mib": 1810.06,
+      "rows": 1682738,
+      "rep_times": "0.3277;0.3334;0.3284"
+    },
+    {
+      "operation": "read_year_partitioned_selected_columns",
+      "reps": 3,
+      "median_seconds": 0.0549,
+      "std_seconds": 0.0017,
+      "min_seconds": 0.0544,
+      "max_seconds": 0.0576,
+      "peak_rss_mib": 409.38,
+      "rows": 1682738,
+      "rep_times": "0.0576;0.0549;0.0544"
+    },
+    {
+      "operation": "read_year_partitioned_date_filter",
+      "reps": 3,
+      "median_seconds": 0.05,
+      "std_seconds": 0.0005,
+      "min_seconds": 0.0492,
+      "max_seconds": 0.0501,
+      "peak_rss_mib": 385.16,
+      "rows": 123461,
+      "rep_times": "0.0500;0.0501;0.0492"
+    },
+    {
+      "operation": "read_year_partitioned_zstd_full",
+      "reps": 3,
+      "median_seconds": 0.313,
+      "std_seconds": 0.0035,
+      "min_seconds": 0.3085,
+      "max_seconds": 0.3153,
+      "peak_rss_mib": 1845.37,
+      "rows": 1682738,
+      "rep_times": "0.3085;0.3153;0.3130"
+    },
+    {
+      "operation": "write_csv",
+      "reps": 3,
+      "median_seconds": 23.7491,
+      "std_seconds": 0.1424,
+      "min_seconds": 23.7173,
+      "max_seconds": 23.9783,
+      "peak_rss_mib": 1183.22,
+      "rows": 1682738,
+      "rep_times": "23.7491;23.7173;23.9783"
+    },
+    {
+      "operation": "write_gzip_csv",
+      "reps": 2,
+      "median_seconds": 169.844,
+      "std_seconds": 0.4959,
+      "min_seconds": 169.4933,
+      "max_seconds": 170.1946,
+      "peak_rss_mib": 1186.11,
+      "rows": 1682738,
+      "rep_times": "169.4933;170.1946"
+    },
+    {
+      "operation": "write_single_parquet_snappy",
+      "reps": 3,
+      "median_seconds": 1.6273,
+      "std_seconds": 0.0158,
+      "min_seconds": 1.6231,
+      "max_seconds": 1.6523,
+      "peak_rss_mib": 1335.5,
+      "rows": 1682738,
+      "rep_times": "1.6231;1.6273;1.6523"
+    },
+    {
+      "operation": "write_single_parquet_zstd",
+      "reps": 3,
+      "median_seconds": 1.8427,
+      "std_seconds": 0.0145,
+      "min_seconds": 1.8378,
+      "max_seconds": 1.865,
+      "peak_rss_mib": 1334.72,
+      "rows": 1682738,
+      "rep_times": "1.8378;1.8650;1.8427"
+    },
+    {
+      "operation": "write_year_partitioned_snappy",
+      "reps": 3,
+      "median_seconds": 3.7409,
+      "std_seconds": 0.0649,
+      "min_seconds": 3.6535,
+      "max_seconds": 3.7804,
+      "peak_rss_mib": 2151.88,
+      "rows": 1682738,
+      "rep_times": "3.7804;3.7409;3.6535"
+    },
+    {
+      "operation": "write_year_partitioned_zstd",
+      "reps": 3,
+      "median_seconds": 3.9454,
+      "std_seconds": 0.0454,
+      "min_seconds": 3.9439,
+      "max_seconds": 4.0232,
+      "peak_rss_mib": 2149.66,
+      "rows": 1682738,
+      "rep_times": "3.9454;4.0232;3.9439"
+    }
+  ]
+}

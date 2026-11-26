@@ -1,0 +1,213 @@
+{
+  "unit_sanity_pre2006": [
+    {
+      "field": "ASSET",
+      "expected_unit": "USD thousands ($k)",
+      "n_nonnull": 1055022,
+      "p01": 4759.0,
+      "median": 60442.0,
+      "p99": 5672572.23,
+      "iqr_outlier_pct": 11.87
+    },
+    {
+      "field": "DEP",
+      "expected_unit": "USD thousands ($k)",
+      "n_nonnull": 1055021,
+      "p01": 1507.2,
+      "median": 52132.0,
+      "p99": 3888080.4,
+      "iqr_outlier_pct": 11.56
+    },
+    {
+      "field": "EQ",
+      "expected_unit": "USD thousands ($k)",
+      "n_nonnull": 1052543,
+      "p01": -61.0,
+      "median": 5333.0,
+      "p99": 433520.5,
+      "iqr_outlier_pct": 11.93
+    },
+    {
+      "field": "capital_ratio",
+      "expected_unit": "ratio (EQ/ASSET)",
+      "n_nonnull": 1052543,
+      "p01": -0.0014,
+      "median": 0.0869,
+      "p99": 0.4895,
+      "iqr_outlier_pct": 7.9
+    },
+    {
+      "field": "loan_to_asset",
+      "expected_unit": "ratio (LNLSNET/ASSET)",
+      "n_nonnull": 1055021,
+      "p01": 0.0258,
+      "median": 0.5876,
+      "p99": 0.8968,
+      "iqr_outlier_pct": 1.71
+    },
+    {
+      "field": "noncurrent_loan_to_asset",
+      "expected_unit": "ratio (NCLNLS/ASSET)",
+      "n_nonnull": 1052568,
+      "p01": 0.0,
+      "median": 0.0057,
+      "p99": 0.0856,
+      "iqr_outlier_pct": 7.87
+    },
+    {
+      "field": "ROA",
+      "expected_unit": "percent (%)",
+      "n_nonnull": 1055022,
+      "p01": -5.5916,
+      "median": 1.0124,
+      "p99": 3.5736,
+      "iqr_outlier_pct": 9.1
+    },
+    {
+      "field": "ROE",
+      "expected_unit": "percent (%)",
+      "n_nonnull": 1042336,
+      "p01": -68.643,
+      "median": 11.25,
+      "p99": 41.08,
+      "iqr_outlier_pct": 9.0
+    },
+    {
+      "field": "NIMY",
+      "expected_unit": "percent (%)",
+      "n_nonnull": 1055022,
+      "p01": 0.2856,
+      "median": 4.2422,
+      "p99": 8.0015,
+      "iqr_outlier_pct": 6.08
+    },
+    {
+      "field": "asset_growth_qoq",
+      "expected_unit": "decimal growth",
+      "n_nonnull": 1032584,
+      "p01": -0.1136,
+      "median": 0.0139,
+      "p99": 0.3822,
+      "iqr_outlier_pct": 7.96
+    }
+  ],
+  "winsorization_dev_sensitivity": [
+    {
+      "treatment": "unwinsorized",
+      "model": "random_forest",
+      "dev_pr_auc": 0.242256,
+      "dev_roc_auc": 0.940031
+    },
+    {
+      "treatment": "unwinsorized",
+      "model": "logistic_regression",
+      "dev_pr_auc": 0.131305,
+      "dev_roc_auc": 0.906956
+    },
+    {
+      "treatment": "winsor_0.5_99.5",
+      "model": "random_forest",
+      "dev_pr_auc": 0.229236,
+      "dev_roc_auc": 0.919232
+    },
+    {
+      "treatment": "winsor_0.5_99.5",
+      "model": "logistic_regression",
+      "dev_pr_auc": 0.188563,
+      "dev_roc_auc": 0.908604
+    },
+    {
+      "treatment": "winsor_1_99",
+      "model": "random_forest",
+      "dev_pr_auc": 0.226864,
+      "dev_roc_auc": 0.928743
+    },
+    {
+      "treatment": "winsor_1_99",
+      "model": "logistic_regression",
+      "dev_pr_auc": 0.206145,
+      "dev_roc_auc": 0.908595
+    }
+  ],
+  "feature_group_ablation_rf_dev_1000boot": [
+    {
+      "ablation": "Full Variant 3 (12 feats)",
+      "features_remaining": 12,
+      "point_dev_pr_auc": 0.2423,
+      "boot_mean_pr_auc": 0.2436,
+      "boot_ci95_low": 0.1723,
+      "boot_ci95_high": 0.3221,
+      "delta_vs_full_mean": 0.0,
+      "delta_ci95_low": 0.0,
+      "delta_ci95_high": 0.0,
+      "delta_ci99_bonf_low": 0.0,
+      "delta_ci99_bonf_high": 0.0
+    },
+    {
+      "ablation": "Drop Capital (C)",
+      "features_remaining": 11,
+      "point_dev_pr_auc": 0.1999,
+      "boot_mean_pr_auc": 0.2018,
+      "boot_ci95_low": 0.1345,
+      "boot_ci95_high": 0.2749,
+      "delta_vs_full_mean": -0.0418,
+      "delta_ci95_low": -0.0702,
+      "delta_ci95_high": -0.015,
+      "delta_ci99_bonf_low": -0.0802,
+      "delta_ci99_bonf_high": 0.0011
+    },
+    {
+      "ablation": "Drop Asset Quality (A)",
+      "features_remaining": 9,
+      "point_dev_pr_auc": 0.2176,
+      "boot_mean_pr_auc": 0.2195,
+      "boot_ci95_low": 0.1528,
+      "boot_ci95_high": 0.2938,
+      "delta_vs_full_mean": -0.0241,
+      "delta_ci95_low": -0.0585,
+      "delta_ci95_high": 0.0094,
+      "delta_ci99_bonf_low": -0.0682,
+      "delta_ci99_bonf_high": 0.015
+    },
+    {
+      "ablation": "Drop Earnings (E)",
+      "features_remaining": 8,
+      "point_dev_pr_auc": 0.215,
+      "boot_mean_pr_auc": 0.2191,
+      "boot_ci95_low": 0.1418,
+      "boot_ci95_high": 0.2993,
+      "delta_vs_full_mean": -0.0245,
+      "delta_ci95_low": -0.0496,
+      "delta_ci95_high": 0.0072,
+      "delta_ci99_bonf_low": -0.0571,
+      "delta_ci99_bonf_high": 0.0172
+    },
+    {
+      "ablation": "Drop Liquidity (L)",
+      "features_remaining": 10,
+      "point_dev_pr_auc": 0.2435,
+      "boot_mean_pr_auc": 0.2456,
+      "boot_ci95_low": 0.1746,
+      "boot_ci95_high": 0.3204,
+      "delta_vs_full_mean": 0.0021,
+      "delta_ci95_low": -0.0158,
+      "delta_ci95_high": 0.0206,
+      "delta_ci99_bonf_low": -0.0195,
+      "delta_ci99_bonf_high": 0.0254
+    },
+    {
+      "ablation": "Drop Growth / Sensitivity (S)",
+      "features_remaining": 10,
+      "point_dev_pr_auc": 0.2381,
+      "boot_mean_pr_auc": 0.24,
+      "boot_ci95_low": 0.1655,
+      "boot_ci95_high": 0.3136,
+      "delta_vs_full_mean": -0.0036,
+      "delta_ci95_low": -0.0213,
+      "delta_ci95_high": 0.0147,
+      "delta_ci99_bonf_low": -0.0269,
+      "delta_ci99_bonf_high": 0.0174
+    }
+  ],
+  "ablation_bootstrap_note": "Matches dev_analysis.py exact PRNG stream (np.random.seed(42), dev['CERT'].unique(), np.random.choice). Includes both unadjusted 95% CIs and Bonferroni-adjusted 99% CIs (alpha = 0.05 / 5 groups = 0.01)."
+}

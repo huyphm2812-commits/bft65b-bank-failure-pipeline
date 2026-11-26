@@ -1,0 +1,13 @@
+engine,multiplier,rows,summary_rows,seconds,peak_rss_mib,status
+polars_eager,1,1682738,170,0.0983,323.03,OK
+polars_streaming,1,1682738,170,0.1735,215.58,OK
+polars_eager,5,8413690,170,0.1582,1016.85,OK
+polars_streaming,5,8413690,170,0.2398,751.8,OK
+polars_eager,10,16827380,170,0.2694,1856.21,OK
+polars_streaming,10,16827380,170,0.4638,1415.92,OK
+polars_eager,50,84136900,170,6.4635,6796.89,OK
+polars_streaming,50,84136900,170,2.4805,6702.04,OK
+spark_local4,1,1682738,170,9.1083,1609.74,OK
+spark_local4,5,8413690,170,13.8435,3066.44,OK
+spark_local4,10,16827380,170,37.502,3016.52,OK
+spark_local4,50,84136900,170,98.4092,3497.38,OK

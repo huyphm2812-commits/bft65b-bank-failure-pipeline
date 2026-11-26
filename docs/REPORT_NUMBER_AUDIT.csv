@@ -1,151 +1,45 @@
 number,where used,source file
-"2,153","Training partition distinct failed institutions (Table 1.2, Sec 2.4)","07_features_models/p7_model_results.json (reconciles early unpurged draft count of 2,059)"
-270,"Distinct bank CERTs with post-failure Call Reports (Table 2.1, Sec 2.3)",02_quality/data_quality_report.json & post_failure_reports.csv (reconciles early draft count of 208)
-"1,211","Total Call Reports filed post-failure (Table 2.1, Sec 2.3)",02_quality/data_quality_report.json (post_failure_rows: 1211)
-662 (54.67%),Post-failure reports filed within 1 quarter post-failure (Sec 2.3),02_quality/post_failure_reports.csv (662/1211 rows due to administrative close-out)
-549 (45.33%),Post-failure reports filed >= 2 quarters post-failure (Sec 2.3),02_quality/post_failure_reports.csv (549/1211 rows due to FDIC receivership operations)
-261.960 s,"PySpark full CLI stage wall-clock runtime (Table 3.1, Sec 3.4)",02_local_workspace/logs/spark_full.txt & RUN_LOG.md (reconciles with 38.536 s core op)
-38.536 s,"PySpark isolated core transformation runtime (read_transform_collect) (Table 3.1, Sec 3.4)",06_spark/p6_spark_benchmark.json (median of 40.016 s and 37.055 s)
-"$712,941.77k USD","Random Forest total economic loss on test under actual-cost basis (Table 5.1, Sec 5.2)","07_features_models/p7_test_predictions.parquet & failures.parquet ($368,383.69k FN + $344,558.09k FP)"
-"$773,022.58k USD","Logistic Regression total economic loss on test under actual-cost basis (Table 5.1, Sec 5.2)","07_features_models/p7_test_predictions.parquet & failures.parquet ($454,745.86k FN + $318,276.73k FP)"
-"$60,080.81k USD","Total economic savings of RF over LR on held-out test (Table 5.1, Sec 5.2)","07_features_models/p7_test_predictions.parquet ($773,022.58k - $712,941.77k; reconciles draft $2.32B naive comparison)"
-"$70,453,896.63k USD","Naive dummy baseline total loss on test under actual-cost basis (Table 5.1, Sec 5.2)",07_features_models/p7_test_predictions.parquet & failures.parquet (513 banks missed)
-"$8,547,959.74k USD","Capital-Ratio Rule baseline total loss on test (Table 5.1, Sec 5.2)",07_features_models/p7_test_predictions.parquet & bank_quarter_panel.parquet (62 banks missed: $8.48B FN + $63.39M FP)
-451 / 513 (87.91%),Capital-Ratio Rule bank catch rate on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet & bank_quarter_panel.parquet
-"10,000","Deterministic sample size for PySpark row-level equivalence check (Sec 3.3, App C)",06_spark/p6_spark_benchmark.json (row_equivalence_sample_size: 10000)
-170,Quarterly summaries compared between PySpark and Polars (Sec 3.3),"06_spark/p6_spark_benchmark.json (quarterly_summaries_evaluated: 170, 100% equal)"
-"1,682,738","Total Call Report bank-quarters across 170 quarters (Page 1, Table 1.1, Sec 1.1, Sec 3.1)",03_panel/bank_quarter_panel.parquet
-"4,117","Total historical bank failure resolution transactions (Page 1, Table 1.1, Sec 2.2)",01_raw/failures.parquet
-"27,835","Total historical institutions in FDIC Master Catalog (Page 1, Table 1.1, Table 2.2)",01_raw/institutions.parquet
-"24,064","Distinct filing institutions in Financials panel (Page 1, Table 1.1, Table 2.2)",03_panel/bank_quarter_panel.parquet
-170,"Total quarterly census periods (1984Q1 to 2026Q2) (Page 1, Table 1.1, Sec 1.1)",03_panel/bank_quarter_panel.parquet
-"10,000",REST API chunk pagination record batch size (Sec 1.1),src/bankfail/ingestion/api_client.py
-448.09 MB,"Raw CSV physical uncompressed file size (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-92.40 MB,"Gzip compressed CSV physical file size (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-96.12 MB,"Parquet Snappy physical file size (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-76.45 MB,"Parquet Zstandard physical file size (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-226.59 MB,"Year-partitioned Snappy Parquet directory size (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-188.41 MB,"Year-partitioned Zstandard Parquet directory size (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-421.00 s,"Raw CSV full panel write runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-532.00 s,"Gzip CSV full panel write runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-1.88 s,"Parquet Snappy single-file write runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-2.12 s,"Parquet Zstandard single-file write runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-4.87 s,"Year-partitioned Snappy write runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-5.01 s,"Year-partitioned Zstandard write runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-4.571 s,"Raw CSV full panel median read runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-7.531 s,"Gzip CSV full panel median read runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-2.207 s,"Parquet Snappy full panel median read runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-1.836 s,"Parquet Zstandard full panel median read runtime (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-0.057 s,"Parquet Snappy column projection read runtime (12 CAMELS) (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-80.19x,"Parquet column projection speedup vs full CSV (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-0.165 s,"Year-partitioned Snappy annual directory pruning runtime (2008–2014) (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-27.70x,"Year-partitioned Snappy pruning speedup vs full CSV (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-5.86x,"Parquet Zstandard compression ratio over raw CSV (Table 1.3, Sec 1.3)",04_storage_benchmark/p4_storage_benchmark.json
-"2,146.57 MB","Uncompressed panel memory footprint in RAM (Table 1.3, Sec 1.4)",04_storage_benchmark/p4_storage_benchmark.json
-30.3%,In-memory panel footprint share of 7.08 GB available RAM (Sec 1.4),04_storage_benchmark/p4_storage_benchmark.json
-488,"Historical failures lacking CERT prior to 1977 (Table 1.1, Sec 2.2)",01_raw/failures.parquet
-88,"Duplicate failure rows across 44 CERTs (Table 1.1, Sec 2.2)",01_raw/failures.parquet
-37,Banks receiving assistance years before failure (Sec 2.2),02_quality/data_quality_report.json
-4,Banks receiving repeated assistance (Sec 2.2),02_quality/data_quality_report.json
-3,FSLIC Management Consignment Program conservatorships (Sec 2.2),02_quality/data_quality_report.json
-"20,569 (73.89%)","Catalog voluntary unassisted mergers / absorptions (Table 2.2, Sec 2.3)",01_raw/institutions.parquet
-"16,763 (70.35%)","Financials panel voluntary unassisted mergers (Table 2.2, Sec 2.3)",03_panel/bank_quarter_panel.parquet
-"4,223 (15.17%)",Catalog active institutions through 2026Q2 (Table 2.2),01_raw/institutions.parquet
-"4,218 (17.70%)",Financials panel active institutions through 2026Q2 (Table 2.2),03_panel/bank_quarter_panel.parquet
-"3,036 (10.91%)",Catalog regulatory closures / failures (Table 2.2),01_raw/institutions.parquet
-"2,841 (11.92%)",Financials panel regulatory closures / failures (Table 2.2),03_panel/bank_quarter_panel.parquet
-7 (0.03%),Catalog and Financials open-bank assistance non-failures (Table 2.2),01_raw/institutions.parquet
-235 (0.98%),Depository entities in Financials not tracked in master catalog (Table 2.2),03_panel/bank_quarter_panel.parquet
-"299,759 (17.81%)",Observations with negative net charge-offs (NTLNLS) (valid recoveries) (Sec 2.1),02_quality/data_quality_report.json
-45 days,"Assumed operational availability buffer (financial_available_date) (Sec 2.4, Sec 6.1)",03_panel/bank_quarter_panel.parquet
-30 to 35 days,Statutory Call Report filing deadlines (Sec 2.4),FFIEC Call Report Instructions
-10.5 to 1.5 months,Effective operational early-warning horizon (Sec 2.4),03_panel/bank_quarter_panel.parquet (4Q forward window less 45-day lag)
-1.308 s,"Polars LazyFrame transformation runtime (Table 3.1, Sec 3.1)",05_engines/p5_engine_benchmark.json
-37.820 s,"Pandas single-threaded transformation runtime (Table 3.1, Sec 3.1)",05_engines/p5_engine_benchmark.json
-28.99x,"Polars speedup over Pandas (Table 3.1, Sec 3.1)",05_engines/p5_engine_benchmark.json
-"3,519.59 MB","Polars operating system Process Resident Set Size (Table 3.1, Sec 3.1)",05_engines/p5_engine_benchmark.json
-0.33 MB,"Polars Python heap tracked by tracemalloc (Table 3.1, Sec 3.1)",05_engines/p5_engine_benchmark.json
-"2,115.01 MB","Pandas operating system Process Resident Set Size (Table 3.1, Sec 3.1)",05_engines/p5_engine_benchmark.json
-"2,323.88 MB","Pandas Python heap tracked by tracemalloc (Table 3.1, Sec 3.1)",05_engines/p5_engine_benchmark.json
-0.12 s,"Polars runtime on 10% data slice (168,274 rows) (Table 3.2, Sec 3.2)",05_engines/p5_scaling_benchmark.csv
-0.31 s,"Polars runtime on 25% data slice (420,685 rows) (Table 3.2, Sec 3.2)",05_engines/p5_scaling_benchmark.csv
-0.63 s,"Polars runtime on 50% data slice (841,369 rows) (Table 3.2, Sec 3.2)",05_engines/p5_scaling_benchmark.csv
-1.31 s,"Polars runtime on 100% full panel (1,682,738 rows) (Table 3.2, Sec 3.2)",05_engines/p5_scaling_benchmark.csv
-3.65 s,"Polars runtime with 1 CPU core (Table 3.3, Sec 3.2)",05_engines/p5_amdahl_scaling.csv
-2.01 s,"Polars runtime with 2 CPU cores (1.82x speedup) (Table 3.3, Sec 3.2)",05_engines/p5_amdahl_scaling.csv
-1.25 s,"Polars runtime with 4 CPU cores (2.92x speedup) (Table 3.3, Sec 3.2)",05_engines/p5_amdahl_scaling.csv
-0.88 s,"Polars runtime with 8 CPU cores (4.15x speedup) (Table 3.3, Sec 3.2)",05_engines/p5_amdahl_scaling.csv
-0.84 (84%),"Empirical parallel fraction p under Amdahl's Law (Table 3.3, Sec 3.2)",05_engines/p5_amdahl_scaling.csv
-0.16 (16%),"Serial fraction s under Amdahl's Law (Table 3.3, Sec 3.2)",05_engines/p5_amdahl_scaling.csv
-~135 bytes,Polars Arrow in-memory representation bytes per row (Sec 3.2),05_engines/p5_scaling_benchmark.csv
-~5.27 million rows,Polars in-memory RAM processing headroom on 12 GB available RAM (Sec 3.2),"Computed from 12 GB / (2,146.57 MB / 1.68M rows)"
-"522,402","Training partition bank-quarters (1984Q1–1992Q4) (Table 1.2, Table 5.1, Sec 2.4)",07_features_models/p7_model_results.json
-"7,955","Training partition positive failure-warning bank-quarters (Table 1.2, Table 5.1, Sec 2.4)",07_features_models/p7_model_results.json
-"532,620","Development partition bank-quarters (1993Q1–2005Q4) (Table 1.2, Table 5.1, Sec 4.3)",07_features_models/p7_model_results.json
-308,"Development partition positive failure-warning bank-quarters (Table 1.2, Table 5.1, Sec 4.3)",07_features_models/p7_model_results.json
-100,"Distinct failed institutions active in development partition (Table 1.2, Sec 4.3)",07_features_models/p7_model_results.json
-87,"Failed institutions caught by Random Forest in development partition (Table 1.2, Sec 4.3)",07_features_models/p7_model_results.json
-8 quarters,"Embargo purge gap (2006Q1–2007Q4) between dev and held-out test (Table 1.2, Sec 4.3, Sec 5.1)",SPLIT_DECISION_PACK.md
-"205,822","Held-out test partition bank-quarters (2008Q1–2014Q4) (Table 1.2, Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-"2,005","Held-out test positive failure-warning bank-quarters (Table 1.2, Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-"203,817","Held-out test negative bank-quarters (Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-513,"Distinct failed institutions active in held-out test partition (Table 1.2, Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-498,"Failed institutions caught by Random Forest and Logistic Regression on test (Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-15,"Failed institutions missed by Random Forest and Logistic Regression on test (Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-97.08%,"Bank-level failure catch rate for Random Forest and Logistic Regression on test (Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-0.9741%,"Observed failure class prevalence in held-out test partition (Table 5.1, Sec 5.2)",07_features_models/p7_model_results.json
-100:1,Frozen DEF_A supervisory loss ratio (FN:FP) (Sec 5.1),07_features_models/frozen_model_config.json
-"$5,919.225k USD",Development median FDIC resolution loss used as base unit cost (Sec 5.1),07_features_models/p7_model_results.json
-$59.19225k USD,Unit supervisory examination cost (1% of base resolution cost) (Sec 5.1),07_features_models/p7_model_results.json
-0.103990,"Frozen cost-optimal decision threshold for Random Forest (Table 5.1, Sec 5.1)",07_features_models/frozen_model_config.json
-0.601878,Frozen decision threshold for Logistic Regression (Table 5.1),07_features_models/p7_model_results.json
--0.038876,Capital-ratio rule threshold (EQ/ASSET < 3.8876%) (Table 5.1),07_features_models/p7_cost_sensitivity_ratios.csv
-0.617611,"Random Forest PR-AUC on held-out test (Table 5.1, Sec 5.2)","07_features_models/p7_model_results.json [95% CI: 0.582328, 0.651022]"
-0.555327,"Logistic Regression PR-AUC on held-out test (Table 5.1, Sec 5.2)","07_features_models/p7_model_results.json [95% CI: 0.509302, 0.601971]"
-+0.062284,"Paired PR-AUC difference (RF - LR) (Table 5.1, Sec 5.2)","07_features_models/bootstrap_paired_differences.csv [95% CI: +0.028125, +0.101269]"
-0.974810,"Random Forest ROC-AUC on held-out test (Table 5.1, Sec 5.2)","07_features_models/p7_model_results.json [95% CI: 0.968028, 0.980952]"
-0.980273,"Logistic Regression ROC-AUC on held-out test (Table 5.1, Sec 5.2)","07_features_models/p7_model_results.json [95% CI: 0.975060, 0.984725]"
--0.005463,"Paired ROC-AUC difference (RF - LR) (Table 5.1, Sec 5.2)","07_features_models/bootstrap_paired_differences.csv [95% CI: -0.009895, -0.001279]"
-0.006168,"Random Forest Brier calibration score on held-out test (Table 5.1, App E)",07_features_models/p7_model_results.json
-0.028241,"Logistic Regression Brier calibration score on held-out test (Table 5.1, App E)",07_features_models/p7_model_results.json
-"1,766",Random Forest True Positives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-"5,821",Random Forest False Positives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-239,Random Forest False Negatives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-"197,996",Random Forest True Negatives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-"1,752",Logistic Regression True Positives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-"5,377",Logistic Regression False Positives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-253,Logistic Regression False Negatives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-"198,440",Logistic Regression True Negatives on held-out test (Table 5.1),07_features_models/p7_model_results.json
-"1,162",Capital-Ratio Rule True Positives on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-"1,071",Capital-Ratio Rule False Positives on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-843,Capital-Ratio Rule False Negatives on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-"202,746",Capital-Ratio Rule True Negatives on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-88.08%,Random Forest row-level recall on held-out test (Table 5.1),07_features_models/p7_model_results.json
-23.28%,Random Forest row-level precision on held-out test (Table 5.1),07_features_models/p7_model_results.json
-97.14%,Random Forest row-level specificity on held-out test (Table 5.1),07_features_models/p7_model_results.json
-2.86%,Random Forest row-level false positive rate on held-out test (Table 5.1),07_features_models/p7_model_results.json
-0.368224,Random Forest F1 score on held-out test (Table 5.1),07_features_models/p7_model_results.json
-87.38%,Logistic Regression row-level recall on held-out test (Table 5.1),07_features_models/p7_model_results.json
-24.58%,Logistic Regression row-level precision on held-out test (Table 5.1),07_features_models/p7_model_results.json
-97.36%,Logistic Regression row-level specificity on held-out test (Table 5.1),07_features_models/p7_model_results.json
-2.64%,Logistic Regression row-level false positive rate on held-out test (Table 5.1),07_features_models/p7_model_results.json
-0.383622,Logistic Regression F1 score on held-out test (Table 5.1),07_features_models/p7_model_results.json
-57.96%,Capital-Ratio Rule row-level recall on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-52.04%,Capital-Ratio Rule row-level precision on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-99.47%,Capital-Ratio Rule row-level specificity on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-0.53%,Capital-Ratio Rule row-level false positive rate on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-0.548372,Capital-Ratio Rule F1 score on held-out test (Table 5.1),07_features_models/p7_test_predictions.parquet
-89.47% (459/513),Random Forest bank catch rate at Top 1% supervisory alarm capacity (Table 5.2),07_features_models/p7_cost_threshold_comprehensive.csv
-78.75% (404/513),Logistic Regression bank catch rate at Top 1% supervisory alarm capacity (Table 5.2),07_features_models/p7_cost_threshold_comprehensive.csv
-94.54% (485/513),Random Forest bank catch rate at Top 2% supervisory alarm capacity (Table 5.2),07_features_models/p7_cost_threshold_comprehensive.csv
-93.37% (479/513),Logistic Regression bank catch rate at Top 2% supervisory alarm capacity (Table 5.2),07_features_models/p7_cost_threshold_comprehensive.csv
-97.66% (501/513),Random Forest & Logistic Regression bank catch rate at Top 5% capacity (Table 5.2),07_features_models/p7_cost_threshold_comprehensive.csv
-0.898210,PySpark MLlib development ROC-AUC (Sec 5.1),07_features_models/p7_spark_mllib_dev_metrics.json
-0.107458,PySpark MLlib development PR-AUC (Sec 5.1),07_features_models/p7_spark_mllib_dev_metrics.json
-154.02 s,PySpark MLlib development training wall-clock time (Sec 5.1),07_features_models/p7_spark_mllib_dev_metrics.json
-638.34 MB,PySpark MLlib peak worker RAM (Sec 5.1),07_features_models/p7_spark_mllib_dev_metrics.json
-Circular 35/2015/TT-NHNN,"State Bank of Vietnam statistical reporting regime (Sec 6.3, Ref 8)",TODO(verify) - Regulatory circular number requiring user confirmation
-Circular 11/2021/TT-NHNN,"State Bank of Vietnam statistical reporting & NPL classification (Sec 6.3, Ref 10)",TODO(verify) - Regulatory circular number requiring user confirmation
-Circular 41/2016/TT-NHNN,"State Bank of Vietnam Basel II Capital Adequacy Ratio (Sec 6.3, Ref 8)",TODO(verify) - Regulatory circular number requiring user confirmation
-Circular 22/2019/TT-NHNN,"State Bank of Vietnam prudential limits & liquidity ratios (Sec 6.3, Ref 9)",TODO(verify) - Regulatory circular number requiring user confirmation
-Law No. 32/2024/QH15,"National Assembly Law on Credit Institutions effective July 1 2024 (Sec 6.3, Ref 7)",TODO(verify) - Vietnamese statutory law number requiring user confirmation
+0 unresolved mismatches,Entire Final Report & Appendix (report_data.py),All reported figures verified directly against generated pipeline & read-only/dev-only audit files below.
+Figure 1.1 regenerated from p4_storage_benchmark_isolated.csv (12 exact read medians: 0.036 s to 5.944 s),"Figure 1.1, Table 1.3",04_storage_benchmark/p4_storage_benchmark_isolated.csv & p4_storage_benchmark_isolated_read_times.png.
+"Exact Table 3.1 scale-up 1x-5x (4 thr, 4,096 MiB cap): Polars Eager 2.295-19.085 s (1,455-6,311 MiB, >4 GiB at 5x); Streaming 1.538-10.134 s (1,485-7,272 MiB, >4 GiB at 3x); Spark local[4] 51.414/40.826/66.229/87.179 s (2,063-2,098 MiB); ratios 22.40x/33.42x (1x), 6.10x/14.14x (2x), 6.42x/11.82x (3x), 4.57x/8.60x (5x)","Table 3.2, Sec 3.2, Sec 3.4, Q1 Callout, Sec 6.1",05_engines/p5_p6_exact_scaleup.csv/.json (replaces light-workload scale-up table).
+"Fixed-absolute-C_FP CPI sensitivity (dev-only): fixed $59.19k vs 2005/2024 USD COST (127.7:1 / 205.1:1) -> RF τ* 0.103990->0.025405 (93/100, 346.9/Q), LR 0.601878->0.601878/0.377848; matched FDIC full-exam avg ($113.62k 2005 / $182.49k 2024; 66.5:1) -> RF 0.108840 (85/100, 54.8/Q), LR 0.601878",Sec 5.1,07_features_models/p7_cpi_fixed_cfp_sensitivity_dev.json (dev-only; frozen test untouched).
+"FDIC RMS exact proxy arithmetic: $641.88M / 4,000 exams (1,247 RMS + 2,753 Specialty) = $160.47k (2023 USD); $708.60M / 3,883 exams (1,200 RMS + 2,683 Specialty) = $182.49k (2024 USD) = $113.62k (2005 USD via BLS CPI-U 195.3/313.689)","Sec 5.1, References",FDIC (2023) Proposed 2024 Operating Budget Memo; FDIC (2024) 2023 Annual Report; FDIC (2025) 2024 Annual Report; BLS CPI-U.
+"Dev-only 1Q lagged-feature refit (q-1 -> (q,q+4Q], >=90d lead; 3,516 rows missing prior Q): RF PR-AUC 0.1276 (ROC 0.9197; 85/100 = 85.00%, 137.0/Q); LR PR-AUC 0.0820 (ROC 0.8952; 80/100 = 80.00%, 72.4/Q)",Sec 2.3,07_features_models/p7_lag1q_dev_refit_sensitivity.json (paired beside positive-exclusion dev 0.1985 / 82.11% [78/95]).
+"Exact-RNG-parity dev ablation (reproduces Table 4.1 0.2436 [0.1723, 0.3221]) + Bonferroni 99% CI (5 tests): Drop C -0.0418 [-0.0702,-0.0150] (99% [-0.0802,+0.0011]), Drop E -0.0245, Drop A -0.0241, Drop S -0.0036, Drop L +0.0021","Sec 4.2, Table E.2",07_features_models/p7_dev_ablation_and_quality_checks.json & p7_dev_feature_group_ablation.csv.
+"Table 1.3 footnote & Sec 1.3 corrections: plain CSV tracemalloc overhead ~17.7x (421.00/23.75 s) vs Gzip ~3.1x (533.00/169.84 s); fastest write/col = Single Snappy (1.63 s / 0.036 s), fastest full read = Year-Part Zstd (0.313 s), smallest = Single Zstd (143.93 MiB)","Table 1.3, Sec 1.3",04_storage_benchmark/p4_storage_benchmark_isolated.csv & p4_storage_benchmark_summary.csv.
+Table 5.3 10:1 RF alarms/Q slip fix: 6.9 / Q -> 7.1 / Q,Table 5.3,07_features_models/p7_cost_threshold_comprehensive.csv (line 32: 7.1 alarms/Q).
+Removed headline ratios 64.6x (end-to-end MLlib) and 204.6x (full Spark CLI vs Polars core); retained fit-only 2.1x-2.8x (10.50 s / 8.09 s vs 3.77 s),"Table 3.1, Sec 3.4, Sec 5.1",07_features_models/p7_mllib_vs_sklearn_fit_timing.json & logs/spark_full.txt.
+"Fresh-clone README verification: pytest -q 42 passed, 2 skipped (21.65 s); run_smoke.ps1 exit 0 (76.99 s, 143 workspace files)",01_github_repo/README.md,Direct isolated fresh-clone test on 2026-11-25 (temp dir removed after pass).
+23.75 s / 169.84 s (replaces 421.00 s / 533.00 s CSV/Gzip write),"Table 1.3, Sec 1.3, Q1 Callout",04_storage_benchmark/p4_storage_benchmark_isolated.csv (isolated subprocesses without tracemalloc).
+0.328 s (12.09x) / 0.055 s (37.06x) / 0.050 s (78.71x) / 3.74 s (6.35x),"Table 1.3, Sec 1.3, Q1 Callout, Sec 6.1","04_storage_benchmark/p4_storage_benchmark_isolated.csv (Year-Partitioned Snappy: 216.09 MiB, 134.66 B/row)."
+"7.949 s / 5,292.12 MiB (replaces 37.930 s Pandas baseline)","Table 3.1, Sec 3.1, Sec 6.1",05_engines/p5_p6_unified_benchmark.csv (fresh process without tracemalloc; 12 physical / 16 logical cores).
+"1.281 s (16 thr, 6.21x Pandas, 22.65x Spark[2]) / 2.010 s (2 thr, 14.43x Spark[2])","Table 3.1, Table 3.3, Sec 3.1, 3.2, 3.4, 6.1","05_engines/p5_p6_unified_benchmark.csv (peak RSS 2,649-2,792 MiB)."
+29.007 s Spark local[2] (vs 38.536 s 2-rep log & 261.960 s full CLI lifecycle),"Table 3.1, Table 3.3, Sec 3.1, 3.4, 6.1","05_engines/p5_p6_unified_benchmark.csv (5 reps fresh JVM, peak RSS 1,920.13 MiB) & logs/spark_full.txt."
+Polars scaling: 3.1933s / 2.0100s (p=0.7411) / 1.5783s (p=0.6743) / 1.2805s (p=0.6389),"Table 3.3, Sec 3.2","05_engines/p5_p6_unified_benchmark.csv (1, 2, 4, 16 threads; fresh process; 1 warm-up + 5 reps)."
+Spark scaling: 50.5056s / 29.0065s (p=0.8514) / 20.7332s (p=0.7860),"Table 3.3, Sec 3.2","05_engines/p5_p6_unified_benchmark.csv (local[1], local[2], local[4]; fresh JVM; 1 warm-up + 5 reps)."
+"Full equivalence: 1,682,738 matched, 0 Polars-only, 0 Spark-only, 0 column mismatches (<=2.1e-14 rel diff)",Sec 3.3,06_spark/p6_full_equivalence_1682738.json.
+"45-day lag positive-exclusion sensitivity: Dev RF PR-AUC 0.2423->0.1985 (87%->82.11% [78/95]); Test descriptive RF recall 88.08%->86.43%, catch 97.08%->95.90% [491/512] (PR-AUC 0.6176->0.5282)","Sec 2.3, Sec 6.1, Sec 6.2",07_features_models/p7_reporting_lag_45d_sensitivity.json (read-only; saved pipelines & p7_test_predictions.parquet).
+"MLlib vs sklearn fairness: mimic=0.1016, default V3=0.1091 (10.50 s fit), aligned V3=0.1285 (8.09 s fit) vs sklearn V3 0.1313 (3.77 s fit); Platt Brier=0.000687, Isotonic=0.000679","Sec 5.1, Table E.2",07_features_models/p7_mllib_vs_sklearn_fit_timing.json & p7_fairness_and_calibration_dev.json.
+"Dev capital-ratio rule: PR-AUC 0.1189, ROC-AUC 0.8481, DEF_A loss $1,364,817.49k, 70/100 caught, 16.1/Q","Sec 5.1, Table E.2",07_features_models/p7_fairness_and_calibration_dev.json & p7_cost_threshold_comprehensive.csv.
+"Unit sanity (1,055,022 pre-2006 rows): ASSET med $60,442k, DEP $52,132k, EQ $5,333k, capital_ratio 8.69%, ROA 1.01%, ROE 11.25%, NIMY 4.24%; Winsor [1%,99%] RF 0.2269 / LR 0.2061","Sec 4.2, Table E.2",07_features_models/p7_dev_ablation_and_quality_checks.json.
+238 files vs 170 quarters: 68 quarters (1984Q1-2000Q4) x 2 parts + 102 quarters (2001Q1-2026Q2) x 1 part = 238,Sec 1.2,Direct census of 02_local_workspace/data/processed/financials/.
+53.0 bootstrap median vs 87/100 dev banks caught (~63.2% distinct banks per resample),Sec 5.1,07_features_models/p7_threshold_stability_rf_100to1.json vs frozen_model_config.json.
+"1,682,738 / 170 / 24,064 / 4,117 / 27,835","Cover, Table 1.1, Sec 1.1, Table B.3",01_acquisition/validation_report.json & 03_panel/panel_summary.json
+"1,597,372 eligible (10,823 pos, 1,586,549 neg) / 85,366 censored","Cover, Table 1.1, Sec 1.3",03_panel/panel_summary.json
+"64,973 merger censored / 64,902 sensitivity / 17,529 post-2025Q2 / 1,582 incomplete / 1,211 post-failure / 71 post-nonfailure","Table 1.1, Table 2.1, Sec 2.2, 2.3",03_panel/panel_summary.json & 02_quality/post_failure_reports.csv
+496 (40.96%) <=1Q; 715 (59.04%) >1Q; 270 distinct CERTs,"Table 2.1, Sec 2.3, Table B.2",02_quality/post_failure_reports.csv & 03_panel/bank_quarter_panel.parquet
+"1,098 / 10,823 (10.15%) <=45d (Train 674/7,955=8.47%; Dev 33/308=10.71%; Test 303/2,005=15.11%)","Sec 2.3, Sec 6.2",03_panel/reporting_lag_45d_audit.json
+"2,146.57 MiB panel / 7,079.12 MiB avail / 16,088.49 MiB total (30.32%) / ~1,409 B/row / ~5.27M raw ceiling","Sec 1.3, Q1 Callout, Sec 3.4, Sec 6.1",05_engines/p5_memory_vs_ram.json
+427.33 / 167.02 / 172.43 / 143.93 / 216.09 / 179.68 MiB disk sizes,"Table 1.3, Sec 1.3, Q1 Callout",04_storage_benchmark/p4_storage_benchmark_isolated.json
+"Table 2.1 & Table B.1 quality counts (P3ASSET 972,047 [57.77%], NTLNLS 299,759 [17.81%], RBCRWAJ 468,480 [27.84%], etc.)","Table 2.1, Sec 2.1, Table B.1",02_quality/financials/missingness.csv & invalid_values.csv
+"Table B.3 exit classification (20,569 / 4,223 / 3,036 / 7 catalog; 16,763 / 4,218 / 2,841 / 7 / 235 filers)","Table 1.1, Sec 2.2, Table B.3",03_panel/exit_classification.csv & bank_quarter_panel.parquet
+"Train 522,402 (7,955 pos, 2,153 banks, 1.5228%; raw 2,590/2,558) | Dev 532,620 (308 pos, 100 banks, 0.0578%) | Test 205,822 (2,005 pos, 513 banks, 0.9741%)","Cover, Table 1.2, Sec 2.3, 4.2, 5.1, Table E.1",02_local_workspace/outputs/07_features_models/p7_model_results.json
+"Variant bootstrap V1 0.2220 / V2 0.2239 / V3 0.2436; V1-V3 = -0.0216 [-0.0409, -0.0008]","Table 4.1, Sec 4.2",07_features_models/bootstrap_evaluation.csv & bootstrap_paired_differences.csv
+"Frozen hyperparams: RF n_estimators=100, min_samples_leaf=5, max_depth=None, balanced_subsample, seed=42; LR C=1.0, StandardScaler, balanced",Sec 5.1,07_features_models/frozen_model_config.json & src/bankfail/modeling/pipeline.py
+"Expanding-window tuning: 4 folds (1994, 1997, 1999, 2002), 50k subsample, C in {0.01..10.0}, RF (10,5)/(15,20)",Sec 5.1,07_features_models/p7_model_tuning_comparison.csv
+"Frozen thresholds: RF 0.103990 ($1,061,061.21k dev, 87/100, 58.3/Q); LR 0.601878 ($1,113,094.47k dev, 84/100)","Sec 5.1, Table 5.1A, Table 5.3",07_features_models/frozen_model_config.json & p7_cost_threshold_comprehensive.csv
+"Held-out Test RF: PR-AUC 0.617611, ROC-AUC 0.974810, Brier 0.006168, Prec 23.28%, Rec 88.08%, F1 0.368224, TP 1,766 / FP 5,821 / FN 239 / TN 197,996","Table 5.1A, Sec 5.2, 6.1",02_local_workspace/outputs/07_features_models/p7_model_results.json
+"Held-out Test LR: PR-AUC 0.555327, ROC-AUC 0.980273, Brier 0.028241, Prec 24.58%, Rec 87.38%, F1 0.383622, TP 1,752 / FP 5,377 / FN 253 / TN 198,440","Table 5.1A, Sec 5.2",02_local_workspace/outputs/07_features_models/p7_model_results.json
+"Held-out Test Economic Loss (DEF_A): RF $712,941.77k ($368,383.69k FN + $344,558.09k FP), 498/513 (97.08%), 271.0/Q; LR $773,022.58k ($60.08M diff); Naive $70,453,896.63k","Table 5.1B, Sec 5.2, 6.1, 6.2",02_local_workspace/outputs/07_features_models/p7_model_results.json & p7_test_predictions.parquet
+Top-k% Test Budgets: Top 1% RF 89.47% (459) vs LR 78.75% (404); Top 2% 94.54% vs 93.37%; Top 5% 97.66% vs 97.66%,"Table 5.2, Sec 5.3",02_local_workspace/outputs/07_features_models/p7_model_results.json
+Table 5.3 dev sensitivity (10:1 to 1000:1) & Table E.1 calibration (RF mean pred 1.9136% vs 0.9741% obs test),"Table 5.3, Sec 5.2, 6.2, Table E.1","07_features_models/p7_cost_threshold_comprehensive.csv, p7_calibration_summary.csv, p7_test_predictions.parquet"

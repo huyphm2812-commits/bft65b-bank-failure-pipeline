@@ -1,0 +1,11 @@
+{
+  "model": "scikit-learn LogisticRegression (Variant 3, train_only, StandardScaler, class_weight=balanced, max_iter=2000, seed=42)",
+  "train_rows": 522402,
+  "dev_rows": 532620,
+  "fit_seconds": 2.1517,
+  "dev_score_seconds": 0.2337,
+  "total_fit_and_score_seconds": 2.3854,
+  "dev_roc_auc": 0.920249,
+  "dev_pr_auc": 0.143,
+  "note": "Read-only timing check on train/dev splits only; test split never accessed and no model artifacts overwritten."
+}

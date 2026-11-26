@@ -1,0 +1,65 @@
+{
+  "polars_rows": 1682738,
+  "spark_rows": 1682738,
+  "polars_only_keys": 0,
+  "spark_only_keys": 0,
+  "matched_rows": 1682738,
+  "tolerance": 1e-08,
+  "column_mismatches": {
+    "diff_ASSET": 0,
+    "diff_DEP": 0,
+    "diff_EQ": 0,
+    "diff_ROA": 0,
+    "diff_asset_to_deposit": 0,
+    "diff_ASSET_lag1": 0,
+    "diff_asset_growth_qoq": 0,
+    "diff_label": 0,
+    "diff_eligible_for_model": 0
+  },
+  "all_columns_zero_mismatch": true,
+  "column_checksums": {
+    "ASSET": {
+      "polars_sum": 1982162714822.0,
+      "spark_sum": 1982162714822.0,
+      "abs_diff": 0.0,
+      "rel_diff": 0.0
+    },
+    "DEP": {
+      "polars_sum": 1474228969703.0,
+      "spark_sum": 1474228969703.0,
+      "abs_diff": 0.0,
+      "rel_diff": 0.0
+    },
+    "EQ": {
+      "polars_sum": 194296209839.0,
+      "spark_sum": 194296209839.0,
+      "abs_diff": 0.0,
+      "rel_diff": 0.0
+    },
+    "ROA": {
+      "polars_sum": 1476422.666,
+      "spark_sum": 1476422.666,
+      "abs_diff": 7.450580596923828e-09,
+      "rel_diff": 5.046373757760273e-15
+    },
+    "asset_to_deposit": {
+      "polars_sum": 12289584.6283,
+      "spark_sum": 12289584.6283,
+      "abs_diff": 8.568167686462402e-08,
+      "rel_diff": 6.971893636462072e-15
+    },
+    "ASSET_lag1": {
+      "polars_sum": 1938793174556.0,
+      "spark_sum": 1938793174556.0,
+      "abs_diff": 0.0,
+      "rel_diff": 0.0
+    },
+    "asset_growth_qoq": {
+      "polars_sum": 53757.2832,
+      "spark_sum": 53757.2832,
+      "abs_diff": 1.1423253454267979e-09,
+      "rel_diff": 2.1249685205490283e-14
+    }
+  },
+  "verification_seconds": 128.01
+}

@@ -1,0 +1,85 @@
+{
+  "dev_excluded_within_45d_rows": 33,
+  "dev_all_rf": {
+    "rows": 532620,
+    "positives": 308,
+    "positive_banks": 100,
+    "pr_auc": 0.242256,
+    "roc_auc": 0.940031,
+    "row_recall_at_frozen_thresh": 0.6981,
+    "banks_caught": 87,
+    "bank_catch_pct": 87.0
+  },
+  "dev_excl45_rf": {
+    "rows": 532587,
+    "positives": 275,
+    "positive_banks": 95,
+    "pr_auc": 0.198546,
+    "roc_auc": 0.936325,
+    "row_recall_at_frozen_thresh": 0.68,
+    "banks_caught": 78,
+    "bank_catch_pct": 82.11
+  },
+  "dev_all_lr": {
+    "rows": 532620,
+    "positives": 308,
+    "positive_banks": 100,
+    "pr_auc": 0.131305,
+    "roc_auc": 0.906956,
+    "row_recall_at_frozen_thresh": 0.7013,
+    "banks_caught": 84,
+    "bank_catch_pct": 84.0
+  },
+  "dev_excl45_lr": {
+    "rows": 532587,
+    "positives": 275,
+    "positive_banks": 95,
+    "pr_auc": 0.105714,
+    "roc_auc": 0.90116,
+    "row_recall_at_frozen_thresh": 0.68,
+    "banks_caught": 75,
+    "bank_catch_pct": 78.95
+  },
+  "test_excluded_within_45d_rows": 303,
+  "test_all_rf_descriptive": {
+    "rows": 205822,
+    "positives": 2005,
+    "positive_banks": 513,
+    "pr_auc": 0.617611,
+    "roc_auc": 0.97481,
+    "row_recall_at_frozen_thresh": 0.8808,
+    "banks_caught": 498,
+    "bank_catch_pct": 97.08
+  },
+  "test_excl45_rf_descriptive": {
+    "rows": 205519,
+    "positives": 1702,
+    "positive_banks": 512,
+    "pr_auc": 0.528242,
+    "roc_auc": 0.971335,
+    "row_recall_at_frozen_thresh": 0.8643,
+    "banks_caught": 491,
+    "bank_catch_pct": 95.9
+  },
+  "test_all_lr_descriptive": {
+    "rows": 205822,
+    "positives": 2005,
+    "positive_banks": 513,
+    "pr_auc": 0.555327,
+    "roc_auc": 0.980273,
+    "row_recall_at_frozen_thresh": 0.8738,
+    "banks_caught": 498,
+    "bank_catch_pct": 97.08
+  },
+  "test_excl45_lr_descriptive": {
+    "rows": 205519,
+    "positives": 1702,
+    "positive_banks": 512,
+    "pr_auc": 0.47221,
+    "roc_auc": 0.977611,
+    "row_recall_at_frozen_thresh": 0.8566,
+    "banks_caught": 492,
+    "bank_catch_pct": 96.09
+  },
+  "note": "Read-only descriptive audit using saved pipelines (dev) and saved p7_test_predictions.parquet (test); zero refitting or threshold modification."
+}

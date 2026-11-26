@@ -1,0 +1,31 @@
+{
+  "specification": "All 12 Variant 3 features shifted backward by 1 exact quarter (features from q-1 predicting failure in (q, q+4Q]); guarantees >=90 days reporting lead, strictly satisfying 45-day availability lag; dev-only refit on 1984Q1-1991Q4.",
+  "rf_1q_lagged_dev": {
+    "model": "random_forest_v3_1q_lagged",
+    "dev_rows": 532620,
+    "dev_positives": 308,
+    "dev_positive_banks": 100,
+    "rows_missing_prior_quarter": 3516,
+    "dev_pr_auc": 0.127604,
+    "dev_roc_auc": 0.919691,
+    "row_recall_at_frozen_thresh": 0.6883,
+    "banks_caught_at_frozen_thresh": "85/100",
+    "bank_catch_pct_at_frozen_thresh": 85.0,
+    "alarms_per_q_at_frozen_thresh": 137.0,
+    "top_1pct_bank_catch": "75/100 (75.0%)"
+  },
+  "lr_1q_lagged_dev": {
+    "model": "logistic_regression_v3_1q_lagged",
+    "dev_rows": 532620,
+    "dev_positives": 308,
+    "dev_positive_banks": 100,
+    "rows_missing_prior_quarter": 3516,
+    "dev_pr_auc": 0.081957,
+    "dev_roc_auc": 0.895185,
+    "row_recall_at_frozen_thresh": 0.6558,
+    "banks_caught_at_frozen_thresh": "80/100",
+    "bank_catch_pct_at_frozen_thresh": 80.0,
+    "alarms_per_q_at_frozen_thresh": 72.4,
+    "top_1pct_bank_catch": "78/100 (78.0%)"
+  }
+}

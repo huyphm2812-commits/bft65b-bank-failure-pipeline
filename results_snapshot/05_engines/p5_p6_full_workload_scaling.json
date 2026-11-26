@@ -1,0 +1,183 @@
+{
+  "protocol": "Fresh process per setting; full Table 3.1 workload including .collect()/.count(); 1 warm-up + 5 timed repetitions; warm-only cache.",
+  "formula_S": "T_1 / T_n",
+  "formula_p": "(1 - 1/S) / (1 - 1/n)",
+  "summary": [
+    {
+      "engine": "polars",
+      "setting": "POLARS_MAX_THREADS=1",
+      "cores": 1,
+      "rows": 1682738,
+      "warmup_seconds": 5.1598,
+      "median_seconds": 3.4939,
+      "std_seconds": 0.164,
+      "min_seconds": 3.2865,
+      "max_seconds": 3.7463,
+      "speedup_S": 1.0,
+      "amdahl_p": "",
+      "rep_times": "3.4790;3.7463;3.5351;3.4939;3.2865"
+    },
+    {
+      "engine": "polars",
+      "setting": "POLARS_MAX_THREADS=2",
+      "cores": 2,
+      "rows": 1682738,
+      "warmup_seconds": 1.9715,
+      "median_seconds": 2.5641,
+      "std_seconds": 0.953,
+      "min_seconds": 2.0497,
+      "max_seconds": 4.2371,
+      "speedup_S": 1.3626,
+      "amdahl_p": 0.5323,
+      "rep_times": "2.0497;2.2230;2.5641;3.6491;4.2371"
+    },
+    {
+      "engine": "polars",
+      "setting": "POLARS_MAX_THREADS=4",
+      "cores": 4,
+      "rows": 1682738,
+      "warmup_seconds": 2.2945,
+      "median_seconds": 2.1127,
+      "std_seconds": 0.1623,
+      "min_seconds": 1.9659,
+      "max_seconds": 2.3743,
+      "speedup_S": 1.6537,
+      "amdahl_p": 0.5271,
+      "rep_times": "2.1657;1.9659;2.1127;2.3743;1.9978"
+    },
+    {
+      "engine": "spark",
+      "setting": "local[1]",
+      "cores": 1,
+      "rows": 1682738,
+      "warmup_seconds": 56.3401,
+      "median_seconds": 51.0345,
+      "std_seconds": 0.1462,
+      "min_seconds": 50.8688,
+      "max_seconds": 51.2466,
+      "speedup_S": 1.0,
+      "amdahl_p": "",
+      "rep_times": "51.1186;51.2466;51.0345;50.8688;50.9539"
+    },
+    {
+      "engine": "spark",
+      "setting": "local[2]",
+      "cores": 2,
+      "rows": 1682738,
+      "warmup_seconds": 33.0866,
+      "median_seconds": 27.8465,
+      "std_seconds": 0.2667,
+      "min_seconds": 27.4231,
+      "max_seconds": 28.0401,
+      "speedup_S": 1.8327,
+      "amdahl_p": 0.9087,
+      "rep_times": "28.0401;27.8465;27.9277;27.4231;27.5205"
+    },
+    {
+      "engine": "spark",
+      "setting": "local[4]",
+      "cores": 4,
+      "rows": 1682738,
+      "warmup_seconds": 22.4525,
+      "median_seconds": 17.5095,
+      "std_seconds": 0.1824,
+      "min_seconds": 17.4417,
+      "max_seconds": 17.8942,
+      "speedup_S": 2.9147,
+      "amdahl_p": 0.8759,
+      "rep_times": "17.8942;17.6480;17.4950;17.4417;17.5095"
+    }
+  ],
+  "raw": [
+    {
+      "engine": "polars",
+      "threads": 1,
+      "polars_thread_pool_size": 1,
+      "warmup_seconds": 5.159788899996784,
+      "times": [
+        3.4789833999820985,
+        3.746291999996174,
+        3.5350838000013027,
+        3.4939013999828603,
+        3.2864770000160206
+      ],
+      "rows": 1682738,
+      "summary_rows": 170
+    },
+    {
+      "engine": "polars",
+      "threads": 2,
+      "polars_thread_pool_size": 2,
+      "warmup_seconds": 1.9715173000004143,
+      "times": [
+        2.049714099994162,
+        2.222968599991873,
+        2.564057400013553,
+        3.649050599982729,
+        4.237083900021389
+      ],
+      "rows": 1682738,
+      "summary_rows": 170
+    },
+    {
+      "engine": "polars",
+      "threads": 4,
+      "polars_thread_pool_size": 4,
+      "warmup_seconds": 2.2944967999937944,
+      "times": [
+        2.1656916000065394,
+        1.9659186000062618,
+        2.1127391000045463,
+        2.3742500000225846,
+        1.9978117999853566
+      ],
+      "rows": 1682738,
+      "summary_rows": 170
+    },
+    {
+      "engine": "spark",
+      "master": "local[1]",
+      "threads": 1,
+      "warmup_seconds": 56.34011220000684,
+      "times": [
+        51.118607200012775,
+        51.246565400011605,
+        51.034505899995565,
+        50.86876419998589,
+        50.953872699989006
+      ],
+      "rows": 1682738,
+      "summary_rows": 170
+    },
+    {
+      "engine": "spark",
+      "master": "local[2]",
+      "threads": 2,
+      "warmup_seconds": 33.08659479999915,
+      "times": [
+        28.040122999984305,
+        27.846515000012005,
+        27.92770109997946,
+        27.423064299975522,
+        27.520472800009884
+      ],
+      "rows": 1682738,
+      "summary_rows": 170
+    },
+    {
+      "engine": "spark",
+      "master": "local[4]",
+      "threads": 4,
+      "warmup_seconds": 22.452530899987323,
+      "times": [
+        17.89415929999086,
+        17.647967299999436,
+        17.49498700001277,
+        17.441709100006847,
+        17.509518699982436
+      ],
+      "rows": 1682738,
+      "summary_rows": 170
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "cpi_source": "US Bureau of Labor Statistics CPI-U Annual Averages (1982-84=100)",
+  "nominal_baseline": {
+    "median_cost_k": 5919.225,
+    "c_fp_100to1_k": 59.19225,
+    "rf_dev_threshold": 0.10399,
+    "rf_dev_expected_loss_k": 1061061.21,
+    "rf_dev_banks_caught": "87/100"
+  },
+  "cpi_adjusted_dev_sensitivity": {
+    "constant_2005_usd": {
+      "base_year": 2005,
+      "base_cpi_u": 195.3,
+      "real_median_cost_k": 7558.604,
+      "real_c_fp_100to1_k": 75.58604,
+      "rf_dev_threshold": 0.10399,
+      "rf_dev_expected_loss_k": 1265656.3,
+      "rf_dev_banks_caught": "87/100",
+      "rf_dev_alarms_per_q": 58.3,
+      "lr_dev_threshold": 0.601878,
+      "lr_dev_expected_loss_k": 1319629.33,
+      "lr_dev_banks_caught": "84/100"
+    },
+    "constant_2024_usd": {
+      "base_year": 2024,
+      "base_cpi_u": 313.689,
+      "real_median_cost_k": 12140.558,
+      "real_c_fp_100to1_k": 121.40558,
+      "rf_dev_threshold": 0.10399,
+      "rf_dev_expected_loss_k": 2032885.09,
+      "rf_dev_banks_caught": "87/100",
+      "rf_dev_alarms_per_q": 58.3,
+      "lr_dev_threshold": 0.601878,
+      "lr_dev_expected_loss_k": 2119576.07,
+      "lr_dev_banks_caught": "84/100"
+    }
+  }
+}

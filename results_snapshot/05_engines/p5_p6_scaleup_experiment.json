@@ -1,0 +1,113 @@
+{
+  "protocol": "Replicated 1.68M-row Financials Parquet (1x, 5x, 10x, 50x = up to 84.14M rows) with distinct replica-shifted bank CERTs; filter + safe ratio + quarterly aggregation; fresh process per cell; kernel peak RSS in MiB.",
+  "results": [
+    {
+      "engine": "polars_eager",
+      "multiplier": 1,
+      "rows": 1682738,
+      "summary_rows": 170,
+      "seconds": 0.0983,
+      "peak_rss_mib": 323.03,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_streaming",
+      "multiplier": 1,
+      "rows": 1682738,
+      "summary_rows": 170,
+      "seconds": 0.1735,
+      "peak_rss_mib": 215.58,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_eager",
+      "multiplier": 5,
+      "rows": 8413690,
+      "summary_rows": 170,
+      "seconds": 0.1582,
+      "peak_rss_mib": 1016.85,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_streaming",
+      "multiplier": 5,
+      "rows": 8413690,
+      "summary_rows": 170,
+      "seconds": 0.2398,
+      "peak_rss_mib": 751.8,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_eager",
+      "multiplier": 10,
+      "rows": 16827380,
+      "summary_rows": 170,
+      "seconds": 0.2694,
+      "peak_rss_mib": 1856.21,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_streaming",
+      "multiplier": 10,
+      "rows": 16827380,
+      "summary_rows": 170,
+      "seconds": 0.4638,
+      "peak_rss_mib": 1415.92,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_eager",
+      "multiplier": 50,
+      "rows": 84136900,
+      "summary_rows": 170,
+      "seconds": 6.4635,
+      "peak_rss_mib": 6796.89,
+      "status": "OK"
+    },
+    {
+      "engine": "polars_streaming",
+      "multiplier": 50,
+      "rows": 84136900,
+      "summary_rows": 170,
+      "seconds": 2.4805,
+      "peak_rss_mib": 6702.04,
+      "status": "OK"
+    },
+    {
+      "engine": "spark_local4",
+      "multiplier": 1,
+      "rows": 1682738,
+      "summary_rows": 170,
+      "seconds": 9.1083,
+      "peak_rss_mib": 1609.74,
+      "status": "OK"
+    },
+    {
+      "engine": "spark_local4",
+      "multiplier": 5,
+      "rows": 8413690,
+      "summary_rows": 170,
+      "seconds": 13.8435,
+      "peak_rss_mib": 3066.44,
+      "status": "OK"
+    },
+    {
+      "engine": "spark_local4",
+      "multiplier": 10,
+      "rows": 16827380,
+      "summary_rows": 170,
+      "seconds": 37.502,
+      "peak_rss_mib": 3016.52,
+      "status": "OK"
+    },
+    {
+      "engine": "spark_local4",
+      "multiplier": 50,
+      "rows": 84136900,
+      "summary_rows": 170,
+      "seconds": 98.4092,
+      "peak_rss_mib": 3497.38,
+      "status": "OK"
+    }
+  ]
+}

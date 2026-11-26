@@ -1,0 +1,79 @@
+{
+  "cpi_source": "US BLS CPI-U Annual Averages (1982-84=100)",
+  "nominal_baseline": {
+    "median_cost_k": 5919.225,
+    "c_fp_k": 59.19225,
+    "rf_dev_threshold": 0.10399,
+    "lr_dev_threshold": 0.601878
+  },
+  "fixed_cfp_scenarios": [
+    {
+      "scenario": "Fixed $59.19k vs. Constant 2005 USD COST",
+      "base_year": 2005,
+      "real_median_cost_k": 7558.604,
+      "fixed_c_fp_k": 59.19225,
+      "effective_fn_fp_ratio": 127.7,
+      "rf_dev_threshold": 0.025405,
+      "rf_delta_vs_frozen": -0.078585,
+      "rf_dev_alarms_per_q": 346.9,
+      "rf_dev_banks_caught": "93/100",
+      "rf_dev_expected_loss_k": 1204049.24,
+      "lr_dev_threshold": 0.601878,
+      "lr_delta_vs_frozen": 0.0,
+      "lr_dev_alarms_per_q": 52.5,
+      "lr_dev_banks_caught": "84/100",
+      "lr_dev_expected_loss_k": 1278415.35
+    },
+    {
+      "scenario": "Fixed $59.19k vs. Constant 2024 USD COST",
+      "base_year": 2024,
+      "real_median_cost_k": 12140.558,
+      "fixed_c_fp_k": 59.19225,
+      "effective_fn_fp_ratio": 205.1,
+      "rf_dev_threshold": 0.025405,
+      "rf_delta_vs_frozen": -0.078585,
+      "rf_dev_alarms_per_q": 346.9,
+      "rf_dev_banks_caught": "93/100",
+      "rf_dev_expected_loss_k": 1295703.24,
+      "lr_dev_threshold": 0.377848,
+      "lr_delta_vs_frozen": -0.22403,
+      "lr_dev_alarms_per_q": 100.5,
+      "lr_dev_banks_caught": "90/100",
+      "lr_dev_expected_loss_k": 1924871.37
+    },
+    {
+      "scenario": "Fixed $113.62k (2005 FDIC full-exam avg) vs. 2005 USD COST",
+      "base_year": 2005,
+      "real_median_cost_k": 7558.604,
+      "fixed_c_fp_k": 113.619,
+      "effective_fn_fp_ratio": 66.5,
+      "rf_dev_threshold": 0.10884,
+      "rf_delta_vs_frozen": 0.00485,
+      "rf_dev_alarms_per_q": 54.8,
+      "rf_dev_banks_caught": "85/100",
+      "rf_dev_expected_loss_k": 1370407.71,
+      "lr_dev_threshold": 0.601878,
+      "lr_delta_vs_frozen": 0.0,
+      "lr_dev_alarms_per_q": 52.5,
+      "lr_dev_banks_caught": "84/100",
+      "lr_dev_expected_loss_k": 1415244.2
+    },
+    {
+      "scenario": "Fixed $182.49k (2024 FDIC full-exam avg) vs. 2024 USD COST",
+      "base_year": 2024,
+      "real_median_cost_k": 12140.558,
+      "fixed_c_fp_k": 182.488,
+      "effective_fn_fp_ratio": 66.5,
+      "rf_dev_threshold": 0.10884,
+      "rf_delta_vs_frozen": 0.00485,
+      "rf_dev_alarms_per_q": 54.8,
+      "rf_dev_banks_caught": "85/100",
+      "rf_dev_expected_loss_k": 2201120.63,
+      "lr_dev_threshold": 0.601878,
+      "lr_delta_vs_frozen": 0.0,
+      "lr_dev_alarms_per_q": 52.5,
+      "lr_dev_banks_caught": "84/100",
+      "lr_dev_expected_loss_k": 2273137.28
+    }
+  ]
+}

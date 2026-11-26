@@ -1,0 +1,51 @@
+{
+  "mllib_spec_mimic_in_sklearn_v1": {
+    "dev_pr_auc": 0.101553,
+    "dev_roc_auc": 0.898778,
+    "note": "Reproduces MLlib's 14-feature mean-imputed unweighted uncentered spec in sklearn to isolate specification differences."
+  },
+  "sklearn_lr_v3_comparisons": [
+    {
+      "variant": "sklearn_lr_v3_balanced_frozen",
+      "fit_only_sec": 3.765,
+      "dev_pr_auc": 0.131305,
+      "dev_roc_auc": 0.906956,
+      "dev_brier": 0.007696,
+      "dev_mean_pred_prob_pct": 4.4586
+    },
+    {
+      "variant": "sklearn_lr_v3_unweighted",
+      "fit_only_sec": 3.2595,
+      "dev_pr_auc": 0.108763,
+      "dev_roc_auc": 0.903245,
+      "dev_brier": 0.000772,
+      "dev_mean_pred_prob_pct": 0.6264
+    },
+    {
+      "variant": "sklearn_lr_v3_balanced_platt_sigmoid",
+      "fit_only_sec": 8.5869,
+      "dev_pr_auc": 0.131696,
+      "dev_roc_auc": 0.910448,
+      "dev_brier": 0.000687,
+      "dev_mean_pred_prob_pct": 0.4274
+    },
+    {
+      "variant": "sklearn_lr_v3_balanced_isotonic",
+      "fit_only_sec": 9.0919,
+      "dev_pr_auc": 0.133405,
+      "dev_roc_auc": 0.906686,
+      "dev_brier": 0.000679,
+      "dev_mean_pred_prob_pct": 0.1917
+    }
+  ],
+  "dev_capital_ratio_rule": {
+    "rule": "flag when EQ/ASSET < 3.8876% (score = -capital_ratio >= -0.038876)",
+    "dev_pr_auc": 0.118883,
+    "dev_roc_auc": 0.84813,
+    "dev_def_a_100to1_loss_k": 1364817.49,
+    "dev_banks_caught": "70/100 (70.0%)",
+    "dev_alarms_per_quarter": 16.1,
+    "dev_false_alarm_rows": 698,
+    "source_loss": "07_features_models/p7_cost_threshold_comprehensive.csv"
+  }
+}

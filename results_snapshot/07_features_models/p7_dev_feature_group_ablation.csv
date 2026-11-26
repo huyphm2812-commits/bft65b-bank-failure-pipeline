@@ -1,0 +1,7 @@
+ablation,features_remaining,point_dev_pr_auc,boot_mean_pr_auc,boot_ci95_low,boot_ci95_high,delta_vs_full_mean,delta_ci95_low,delta_ci95_high,delta_ci99_bonf_low,delta_ci99_bonf_high
+Full Variant 3 (12 feats),12,0.2423,0.2436,0.1723,0.3221,0.0,0.0,0.0,0.0,0.0
+Drop Capital (C),11,0.1999,0.2018,0.1345,0.2749,-0.0418,-0.0702,-0.015,-0.0802,0.0011
+Drop Asset Quality (A),9,0.2176,0.2195,0.1528,0.2938,-0.0241,-0.0585,0.0094,-0.0682,0.015
+Drop Earnings (E),8,0.215,0.2191,0.1418,0.2993,-0.0245,-0.0496,0.0072,-0.0571,0.0172
+Drop Liquidity (L),10,0.2435,0.2456,0.1746,0.3204,0.0021,-0.0158,0.0206,-0.0195,0.0254
+Drop Growth / Sensitivity (S),10,0.2381,0.24,0.1655,0.3136,-0.0036,-0.0213,0.0147,-0.0269,0.0174
